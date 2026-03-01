@@ -1,0 +1,311 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@300;400;500;600;700&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #06080d;
+  --card: #0c0f18;
+  --card-2: #111520;
+  --border: rgba(255,255,255,0.07);
+  --border-lit: rgba(255,255,255,0.14);
+  --text-1: #f2f4fc;
+  --text-2: #7b849e;
+  --text-3: #3f4760;
+  --accent: #e8ff47;
+  --accent-dim: rgba(232,255,71,0.12);
+  --accent-glow: rgba(232,255,71,0.25);
+  --sans: 'Manrope', sans-serif;
+  --display: 'Bebas Neue', sans-serif;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ── Page ───────────────────────────────────────────────── */
+.cv-page {
+  min-height: 100vh;
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--sans);
+  padding: 40px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* radial ambient glow */
+.cv-page::before {
+  content: '';
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(232,255,71,0.04) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+/* ── Card ───────────────────────────────────────────────── */
+.cv-card {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  background: var(--card);
+  border: 1px solid var(--border-lit);
+  border-radius: 28px;
+  padding: 40px 36px 32px;
+  overflow: hidden;
+  animation: cardIn 0.6s var(--ease) both;
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.03),
+    0 40px 100px rgba(0,0,0,0.7);
+}
+
+/* corner accent mark */
+.cv-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 80px; height: 80px;
+  background: conic-gradient(from 180deg at 0 0, var(--accent) 0deg, transparent 90deg);
+  opacity: 0.06;
+  border-radius: 28px 0 0 0;
+}
+
+/* top shimmer */
+.cv-card::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 15%; right: 15%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(232,255,71,0.3), transparent);
+}
+
+@keyframes cardIn {
+  from { opacity: 0; transform: translateY(24px) scale(0.97); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* ── Tag ────────────────────────────────────────────────── */
+.cv-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--accent-dim);
+  border: 1px solid rgba(232,255,71,0.2);
+  border-radius: 99px;
+  padding: 4px 12px;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 20px;
+}
+
+.cv-tag-dot {
+  width: 5px; height: 5px;
+  background: var(--accent);
+  border-radius: 50%;
+  box-shadow: 0 0 5px var(--accent);
+  animation: blink 2.2s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.3; }
+}
+
+/* ── Name & Title ───────────────────────────────────────── */
+.cv-name {
+  font-family: var(--display);
+  font-size: 3.8rem;
+  line-height: 0.92;
+  color: var(--text-1);
+  letter-spacing: 0.02em;
+  margin-bottom: 10px;
+}
+
+.cv-name em {
+  display: block;
+  font-style: normal;
+  -webkit-text-stroke: 1px rgba(255,255,255,0.25);
+  color: transparent;
+}
+
+.cv-role {
+  font-size: 0.82rem;
+  font-weight: 400;
+  color: var(--text-2);
+  letter-spacing: 0.04em;
+  margin-bottom: 28px;
+  line-height: 1.5;
+}
+
+/* ── Divider ────────────────────────────────────────────── */
+.cv-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.cv-divider-line {
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+.cv-divider-text {
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* ── Download Button ────────────────────────────────────── */
+.cv-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: var(--accent);
+  border: none;
+  border-radius: 16px;
+  padding: 18px 22px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease);
+  text-decoration: none;
+  margin-bottom: 14px;
+}
+
+.cv-btn:hover {
+  transform: translateY(-2px) scale(1.01);
+  box-shadow: 0 12px 40px var(--accent-glow), 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.cv-btn:active {
+  transform: scale(0.98);
+}
+
+/* ripple on hover */
+.cv-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.cv-btn:hover::before { opacity: 1; }
+
+.cv-btn-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+}
+
+.cv-btn-label {
+  font-size: 0.63rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(0,0,0,0.5);
+}
+
+.cv-btn-text {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #06080d;
+  letter-spacing: -0.01em;
+}
+
+/* ── Download Arrow Icon ────────────────────────────────── */
+.cv-btn-icon {
+  width: 42px; height: 42px;
+  background: rgba(0,0,0,0.12);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.2s;
+}
+
+.cv-btn:hover .cv-btn-icon { background: rgba(0,0,0,0.2); }
+
+.cv-btn-icon svg {
+  transition: transform 0.3s var(--ease);
+}
+
+.cv-btn:hover .cv-btn-icon svg {
+  transform: translateY(2px);
+}
+
+/* ── Secondary hint ─────────────────────────────────────── */
+.cv-hint {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 0.7rem;
+  color: var(--text-3);
+  letter-spacing: 0.04em;
+}
+
+.cv-hint-icon { opacity: 0.6; font-size: 0.75rem; }
+
+/* ── Stats row ──────────────────────────────────────────── */
+.cv-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-top: 28px;
+}
+
+.cv-stat {
+  background: var(--card-2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px 10px;
+  text-align: center;
+  transition: border-color 0.3s, background 0.3s;
+}
+
+.cv-stat:hover {
+  border-color: rgba(232,255,71,0.15);
+  background: rgba(232,255,71,0.03);
+}
+
+.cv-stat-value {
+  font-family: var(--display);
+  font-size: 1.5rem;
+  color: var(--text-1);
+  letter-spacing: 0.03em;
+  line-height: 1;
+  margin-bottom: 3px;
+}
+
+.cv-stat-label {
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+
+/* ── Downloaded State ───────────────────────────────────── */
+.cv-btn.downloaded {
+  background: #1a2a0a;
+  border: 1px solid rgba(134,239,76,0.3);
+  pointer-events: none;
+}
+
+.cv-btn.downloaded .cv-btn-text { color: #86ef4c; }
+.cv-btn.downloaded .cv-btn-label { color: rgba(134,239,76,0.5); }
+.cv-btn.downloaded .cv-btn-icon { background: rgba(134,239,76,0.1); }

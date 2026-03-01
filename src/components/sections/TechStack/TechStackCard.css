@@ -1,0 +1,343 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Outfit:wght@300;400;500;600;700&display=swap');
+
+/* ─── Root ──────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:         #080a0f;
+  --surface:    #0e1118;
+  --surface-2:  #161b27;
+  --surface-3:  #1e2638;
+  --border:     rgba(255,255,255,0.06);
+  --border-2:   rgba(255,255,255,0.11);
+  --text-1:     #eef1fb;
+  --text-2:     #8892aa;
+  --text-3:     #545e74;
+  --mono:       'Space Mono', monospace;
+  --sans:       'Outfit', sans-serif;
+  --ease:       cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ─── Page Wrapper ──────────────────────────────────────── */
+.tsc-page {
+  min-height: 100vh;
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  font-family: var(--sans);
+  /* animated noise grain */
+  position: relative;
+}
+
+.tsc-page::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.4;
+}
+
+/* ─── Main Card ─────────────────────────────────────────── */
+.tsc-card {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 760px;
+  background: var(--surface);
+  border: 1px solid var(--border-2);
+  border-radius: 24px;
+  padding: 36px;
+  overflow: hidden;
+  animation: cardIn 0.7s var(--ease) both;
+
+  /* ambient glow behind card */
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.04),
+    0 32px 80px rgba(0,0,0,0.7),
+    0 0 120px rgba(96, 239, 255, 0.03);
+}
+
+/* top-edge shimmer line */
+.tsc-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 10%; right: 10%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent);
+}
+
+/* background grid lines */
+.tsc-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  border-radius: 24px;
+}
+
+@keyframes cardIn {
+  from { opacity: 0; transform: translateY(20px) scale(0.98); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* ─── Header ────────────────────────────────────────────── */
+.tsc-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 32px;
+  position: relative;
+  z-index: 1;
+}
+
+.tsc-header-left { display: flex; flex-direction: column; gap: 6px; }
+
+.tsc-eyebrow {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  color: var(--text-3);
+  text-transform: uppercase;
+}
+
+.tsc-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-1);
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.tsc-title span {
+  background: linear-gradient(135deg, #60efff 0%, #a78bfa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.tsc-subtitle {
+  font-size: 0.82rem;
+  color: var(--text-2);
+  font-weight: 300;
+  margin-top: 2px;
+}
+
+/* live dot */
+.tsc-status {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 99px;
+  padding: 6px 12px;
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  color: var(--text-2);
+  letter-spacing: 0.08em;
+  height: fit-content;
+}
+
+.tsc-dot {
+  width: 6px; height: 6px;
+  background: #34d399;
+  border-radius: 50%;
+  box-shadow: 0 0 6px #34d399;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; box-shadow: 0 0 6px #34d399; }
+  50%       { opacity: 0.5; box-shadow: 0 0 2px #34d399; }
+}
+
+/* ─── Category Grid ─────────────────────────────────────── */
+.tsc-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 540px) {
+  .tsc-grid { grid-template-columns: 1fr; }
+  .tsc-card { padding: 24px; }
+}
+
+/* ─── Category Block ────────────────────────────────────── */
+.tsc-category {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 18px;
+  transition: border-color 0.3s var(--ease), background 0.3s var(--ease), transform 0.3s var(--ease);
+  animation: blockIn 0.5s var(--ease) both;
+  position: relative;
+  overflow: hidden;
+}
+
+.tsc-category::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--cat-color), transparent);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tsc-category:hover::before { opacity: 1; }
+
+.tsc-category:hover {
+  border-color: color-mix(in srgb, var(--cat-color) 25%, transparent);
+  background: color-mix(in srgb, var(--cat-color) 4%, var(--surface-2));
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+}
+
+@keyframes blockIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* stagger animation */
+.tsc-category:nth-child(1) { animation-delay: 0.1s; }
+.tsc-category:nth-child(2) { animation-delay: 0.18s; }
+.tsc-category:nth-child(3) { animation-delay: 0.26s; }
+.tsc-category:nth-child(4) { animation-delay: 0.34s; }
+
+/* ─── Category Header ───────────────────────────────────── */
+.tsc-cat-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.tsc-cat-icon {
+  font-size: 1rem;
+  color: var(--cat-color);
+  line-height: 1;
+  filter: drop-shadow(0 0 6px var(--cat-color));
+}
+
+.tsc-cat-name {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--cat-color);
+}
+
+.tsc-cat-count {
+  margin-left: auto;
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  color: var(--text-3);
+}
+
+/* ─── Tech Row ──────────────────────────────────────────── */
+.tsc-tech-list { display: flex; flex-direction: column; gap: 10px; }
+
+.tsc-tech {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.tsc-tech-meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.tsc-tech-icon {
+  font-size: 0.75rem;
+  opacity: 0.7;
+  width: 14px;
+  text-align: center;
+}
+
+.tsc-tech-name {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--text-1);
+  flex: 1;
+}
+
+.tsc-tech-pct {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  color: var(--text-3);
+}
+
+/* ─── Progress Bar ──────────────────────────────────────── */
+.tsc-bar-track {
+  height: 3px;
+  background: var(--surface-3);
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.tsc-bar-fill {
+  height: 100%;
+  border-radius: 99px;
+  background: linear-gradient(90deg, var(--cat-color), color-mix(in srgb, var(--cat-color) 60%, white));
+  transform-origin: left;
+  animation: barGrow 0.9s var(--ease) both;
+  animation-delay: var(--delay, 0.4s);
+  box-shadow: 0 0 8px color-mix(in srgb, var(--cat-color) 60%, transparent);
+}
+
+@keyframes barGrow {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+/* ─── Footer ────────────────────────────────────────────── */
+.tsc-footer {
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 1;
+}
+
+.tsc-footer-text {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  color: var(--text-3);
+  letter-spacing: 0.06em;
+}
+
+.tsc-total {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.tsc-total-pill {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 99px;
+  padding: 4px 10px;
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  color: var(--text-2);
+  letter-spacing: 0.06em;
+}
+
+.tsc-total-pill strong { color: var(--text-1); }
