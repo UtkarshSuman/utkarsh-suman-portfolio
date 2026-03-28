@@ -1,3 +1,6 @@
+import { FaNodeJs, FaHtml5, FaCss3Alt, FaJs } from "react-icons/fa";
+import { SiExpress, SiPostgresql } from "react-icons/si";
+
 export const projects = [
   {
     title: "E-Commerce Platform",
@@ -59,39 +62,36 @@ export const codingProfiles = [
 export const projects2 = [
   {
     id: 1,
-    title: "Weaave",
-    tagline: "Build, connect, and deploy AI workflows visually — once you see it, you won't go back",
-    previewImage: "https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?w=600&q=80",
+    title: "Mini Postman",
+    tagline:
+      "A lightweight API testing tool to send HTTP requests and instantly inspect responses, status codes, and JSON data.",
+    previewImage:
+      "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&q=80",
     liveUrl: "#",
-    tags: ["N", "TS"],
-    accentColor: "#6ee7b7",
+    tags: [FaNodeJs, SiExpress],
+    accentColor: "#38bdf8",
   },
   {
     id: 2,
-    title: "Prismatic",
-    tagline: "A design system that scales with your team — pixel-perfect and accessible by default",
-    previewImage: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80",
+    title: "Task Management App",
+    tagline:
+      "Full-stack task manager with secure authentication and persistent task storage using PostgreSQL.",
+    previewImage:
+      "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=600&q=80",
     liveUrl: "#",
-    tags: ["R", "JS"],
-    accentColor: "#a78bfa",
+    tags: [FaNodeJs, SiPostgresql],
+    accentColor: "#6ee7b7",
   },
   {
     id: 3,
-    title: "Kaleido",
-    tagline: "Generative art meets data visualization — your metrics have never looked this alive",
-    previewImage: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=600&q=80",
+    title: "Tic Tac Toe",
+    tagline:
+      "Interactive two-player browser game implementing game logic, win detection algorithms, and dynamic UI updates.",
+    previewImage:
+      "https://images.unsplash.com/photo-1611996575749-79a3a250f948?w=600&q=80",
     liveUrl: "#",
-    tags: ["D3", "TS"],
-    accentColor: "#f472b6",
-  },
-  {
-    id: 4,
-    title: "Meridian",
-    tagline: "Real-time collaboration infrastructure for teams building at the speed of thought",
-    previewImage: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=80",
-    liveUrl: "#",
-    tags: ["GO", "K8"],
-    accentColor: "#38bdf8",
+    tags: [FaHtml5, FaCss3Alt, FaJs],
+    accentColor: "#a78bfa",
   },
 ];
 

@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@300;400&family=DM+Mono:wght@400;500&display=swap');
+
+.tz-section {
+  width: 100%;
+  padding: 8px 16px;
+  box-sizing: border-box;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease 0.15s, transform 0.6s ease 0.15s;
+}
+
+.tz-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Card ── */
+.tz-card {
+  background: #0f0f1a;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 20px;
+  padding: 40px 24px;
+  margin-left: 20px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  min-height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Orbit rings ── */
+.tz-rings {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(139, 92, 246, 0.12);
+  animation: orbit-spin linear infinite;
+}
+
+.ring-1 {
+  width: 180px;
+  height: 180px;
+  animation-duration: 12s;
+  border-color: rgba(139, 92, 246, 0.15);
+}
+
+.ring-2 {
+  width: 280px;
+  height: 280px;
+  animation-duration: 20s;
+  animation-direction: reverse;
+  border-color: rgba(99, 102, 241, 0.08);
+}
+
+.ring-3 {
+  width: 380px;
+  height: 380px;
+  animation-duration: 30s;
+  border-color: rgba(139, 92, 246, 0.05);
+}
+
+@keyframes orbit-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* ── Content ── */
+.tz-content {
+  position: relative;
+  z-index: 1;
+}
+
+.tz-offset {
+  font-family: 'Syne', sans-serif;
+  font-size: 42px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -1px;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.tz-badge {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  color: #7c3aed;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  display: block;
+}
+
+.tz-live-time {
+  font-family: 'DM Mono', monospace;
+  font-size: 13px;
+  color: rgba(139, 92, 246, 0.7);
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  background: rgba(139, 92, 246, 0.08);
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 6px;
+  border: 1px solid rgba(139, 92, 246, 0.15);
+}
+
+.tz-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 8px;
+}
+
+.tz-desc {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.45);
+  line-height: 1.6;
+  margin: 0;
+  max-width: 220px;
+  margin: 0 auto;
+}
+
+/* ================= DESKTOP ================= */
+@media (min-width: 1024px) {
+  .tz-section {
+    padding: 8px 24px;
+  }
+
+  .tz-card {
+    border-radius: 24px;
+    padding: 50px 40px;
+    min-height: 280px;
+  }
+
+  .tz-offset {
+    font-size: 56px;
+  }
+
+  .tz-title {
+    font-size: 18px;
+  }
+
+  .tz-desc {
+    font-size: 14px;
+    max-width: 280px;
+  }
+}

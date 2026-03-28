@@ -9,6 +9,7 @@ import {
 } from "@react-three/drei";
 import { motion, useScroll, useTransform } from "framer-motion";
 import * as THREE from "three";
+import RotatingRoleBadge from "../../ui/RotatingComponents";
 
 /* ================= ROBOT COMPONENT ================= */
 
@@ -176,6 +177,7 @@ useEffect(() => {
             autoRotateSpeed={0.8}
           />
         </Canvas>
+        <RotatingRoleBadge/>
       </div>
     </section>
   );

@@ -1,0 +1,63 @@
+/* ── Mobile & Tablet: single column, stacked ── */
+.bento-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 16px 0;
+  box-sizing: border-box;
+}
+
+.bento-cell {
+  width: 100%;
+}
+
+/* Remove section padding on cells — the grid owns spacing */
+.bento-cell > * {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+/* ── Desktop: bento grid ── */
+@media (min-width: 1024px) {
+  .bento-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 0;
+    padding: 24px;
+  }
+
+  /* About: spans both columns */
+  .bento-about {
+    grid-column: 1 / 3;
+  }
+
+  /* Tech and TZ side by side */
+  .bento-tech {
+    grid-column: 1;
+  }
+
+  .bento-tz {
+    grid-column: 2;
+  }
+
+  /* CTA: spans both columns */
+  .bento-cta {
+    grid-column: 1 / 3;
+  }
+
+  .bento-cell > * {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+/* ── Large desktop: limit inner card widths for readability ── */
+@media (min-width: 1280px) {
+  .bento-grid {
+    padding: 32px;
+  }
+}

@@ -3,7 +3,14 @@ import "./Projects.css";
 import { projects2 } from "../../../data/portfolioData";
 
 /* ── Single Card ─────────────────────────────────────────── */
-function ProjectCard({ title, tagline, previewImage, liveUrl, tags, accentColor }) {
+function ProjectCard({
+  title,
+  tagline,
+  previewImage,
+  liveUrl,
+  tags,
+  accentColor,
+}) {
   const cardRef = useRef(null);
 
   /* spotlight effect – track mouse position inside card */
@@ -35,17 +42,30 @@ function ProjectCard({ title, tagline, previewImage, liveUrl, tags, accentColor 
 
       {/* Footer */}
       <footer className="card-footer">
-        <a href={liveUrl} className="card-link" target="_blank" rel="noopener noreferrer">
+        <a
+          href={liveUrl}
+          className="card-link"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Check Live Site
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-            <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            <path
+              d="M2 7h10M8 3l4 4-4 4"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
           </svg>
         </a>
 
         <div className="card-tags">
           <div className="accent-dot" />
-          {tags.map((t) => (
-            <span key={t} className="tag">{t}</span>
+          {tags.map((Icon, index) => (
+            <span key={index} className="tech-icon" title={Icon.name}>
+              <Icon />
+            </span>
           ))}
         </div>
       </footer>

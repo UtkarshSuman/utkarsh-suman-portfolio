@@ -1,0 +1,352 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Fira+Code:wght@400;500&display=swap');
+ 
+/* ── CSS Variables ─────────────────────────────────────────────────────────── */
+:root {
+  --bg-page:        #080a0c;
+  --bg-card:        #0d1014;
+  --bg-card-hover:  #111518;
+  --border:         rgba(255, 255, 255, 0.06);
+  --border-hover:   rgba(190, 255, 0, 0.28);
+  --accent:         #beff00;
+  --accent-dim:     rgba(190, 255, 0, 0.12);
+  --text-primary:   #eef2f7;
+  --text-secondary: #4a5568;
+  --text-muted:     #2d3748;
+  --live-green:     #39d98a;
+  --radius-card:    16px;
+  --radius-btn:     8px;
+  --font-display:   'Syne', sans-serif;
+  --font-mono:      'Fira Code', monospace;
+  --transition:     0.32s cubic-bezier(0.4, 0, 0.2, 1);
+}
+ 
+/* ── Page wrapper ──────────────────────────────────────────────────────────── */
+.pc-page {
+  min-height: 100vh;
+  background: var(--bg-page);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 72px 24px 80px;
+}
+ 
+/* ── Section header ────────────────────────────────────────────────────────── */
+.pc-header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+ 
+.pc-header__eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 14px;
+}
+ 
+.pc-header__title {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 6vw, 52px);
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.04em;
+  line-height: 1.08;
+  margin: 0 0 16px;
+}
+ 
+.pc-header__title span {
+  color: var(--accent);
+}
+ 
+.pc-header__sub {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin: 0;
+  letter-spacing: 0.01em;
+}
+ 
+/* ── Grid ──────────────────────────────────────────────────────────────────── */
+.pc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 340px));
+  gap: 20px;
+  justify-content: center;
+  width: 100%;
+  max-width: 1100px;
+}
+ 
+/* ── Card ──────────────────────────────────────────────────────────────────── */
+.pc-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition:
+    transform var(--transition),
+    border-color var(--transition),
+    box-shadow var(--transition),
+    background var(--transition);
+  position: relative;
+}
+ 
+.pc-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--border-hover);
+  background: var(--bg-card-hover);
+  box-shadow:
+    0 32px 64px rgba(0, 0, 0, 0.6),
+    0 0 0 1px rgba(190, 255, 0, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+ 
+/* Accent top-bar that slides in on hover */
+.pc-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  opacity: 0;
+  transition: opacity var(--transition);
+  z-index: 2;
+}
+ 
+.pc-card:hover::before {
+  opacity: 1;
+}
+ 
+/* ── Image section ─────────────────────────────────────────────────────────── */
+.pc-card__img-wrap {
+  position: relative;
+  height: 196px;
+  overflow: hidden;
+}
+ 
+.pc-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+  display: block;
+}
+ 
+.pc-card:hover .pc-card__img {
+  transform: scale(1.07);
+}
+ 
+.pc-card__img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(8,10,12,0.05) 0%, rgba(8,10,12,0.88) 100%);
+  pointer-events: none;
+}
+ 
+/* ── Live badge ────────────────────────────────────────────────────────────── */
+.pc-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 11px;
+  border-radius: 999px;
+  background: rgba(8, 10, 12, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  backdrop-filter: blur(10px);
+  z-index: 3;
+}
+ 
+.pc-badge__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--live-green);
+  box-shadow: 0 0 8px var(--live-green);
+  animation: pc-pulse 2s ease-in-out infinite;
+}
+ 
+.pc-badge__label {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  color: var(--text-secondary);
+  letter-spacing: 0.06em;
+}
+ 
+@keyframes pc-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.5; transform: scale(0.85); }
+}
+ 
+/* ── Card body ─────────────────────────────────────────────────────────────── */
+.pc-card__body {
+  padding: 20px 22px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+ 
+.pc-card__title {
+  font-family: var(--font-display);
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.025em;
+  margin: 0;
+  line-height: 1.2;
+  transition: color var(--transition);
+}
+ 
+.pc-card:hover .pc-card__title {
+  color: #fff;
+}
+ 
+.pc-card__desc {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin: 0;
+  flex: 1;
+}
+ 
+/* ── Divider ───────────────────────────────────────────────────────────────── */
+.pc-divider {
+  height: 1px;
+  background: var(--border);
+  margin: 4px 0;
+}
+ 
+/* ── Footer ────────────────────────────────────────────────────────────────── */
+.pc-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+ 
+/* ── Tech stack circles ────────────────────────────────────────────────────── */
+.pc-stack {
+  display: flex;
+  align-items: center;
+}
+ 
+.pc-stack__icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #171b20;
+  border: 2px solid rgba(255, 255, 255, 0.07);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-left: -8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: default;
+  position: relative;
+}
+ 
+.pc-stack__icon:first-child {
+  margin-left: 0;
+}
+ 
+.pc-stack__icon:hover {
+  transform: translateY(-4px) scale(1.18);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.6), 0 0 0 1px var(--border-hover);
+  z-index: 10;
+}
+ 
+.pc-stack__icon img {
+  width: 17px;
+  height: 17px;
+  object-fit: contain;
+}
+ 
+/* Tooltip */
+.pc-stack__icon::after {
+  content: attr(data-name);
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  background: #1a1f27;
+  border: 1px solid rgba(255,255,255,0.1);
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  white-space: nowrap;
+  padding: 3px 8px;
+  border-radius: 5px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+  z-index: 20;
+}
+ 
+.pc-stack__icon:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+ 
+.pc-stack__overflow {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-secondary);
+  background: #171b20;
+  border: 2px solid rgba(255, 255, 255, 0.07);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: -8px;
+}
+ 
+/* ── Live link button ──────────────────────────────────────────────────────── */
+.pc-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border-radius: var(--radius-btn);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  font-weight: 500;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  transition:
+    background var(--transition),
+    border-color var(--transition),
+    color var(--transition),
+    box-shadow var(--transition);
+  white-space: nowrap;
+}
+ 
+.pc-link svg {
+  transition: transform var(--transition);
+  flex-shrink: 0;
+}
+ 
+.pc-card:hover .pc-link {
+  background: var(--accent-dim);
+  border-color: rgba(190, 255, 0, 0.35);
+  color: var(--accent);
+  box-shadow: 0 0 16px rgba(190, 255, 0, 0.08);
+}
+ 
+.pc-card:hover .pc-link svg {
+  transform: translateX(3px);
+}
+ 

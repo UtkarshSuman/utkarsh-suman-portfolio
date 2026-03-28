@@ -6,14 +6,14 @@ import "./MyCV.css";
    e.g. "/assets/John_Doe_CV.pdf" or a public URL.
 ────────────────────────────────────────────────────────── */
 const CONFIG = {
-  name: "Your",
-  nameBold: "Name",
-  role: "Full-Stack Developer  ·  UI/UX Enthusiast  ·  Open to opportunities",
+  name: "Utkarsh",
+  nameBold: "Suman",
+  role: "Full-Stack Developer  ·  Backend Devlopment  ·  Open to opportunities",
   cvFilePath: "/assets/your-cv.pdf",      // ← change this
   cvFileName: "YourName_CV_2025.pdf",     // ← downloaded file name
   stats: [
-    { value: "3+", label: "Years exp." },
-    { value: "20+", label: "Projects" },
+    { value: "1+", label: "Years exp." },
+    { value: "8+", label: "Projects" },
     { value: "∞",  label: "Coffee" },
   ],
 };
@@ -23,7 +23,7 @@ function ArrowDown({ downloaded }) {
   if (downloaded) {
     return (
       <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-        <path d="M4 10l4 4 8-8" stroke="#86ef4c" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M4 10l4 4 8-8" stroke="#5fcc24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     );
   }

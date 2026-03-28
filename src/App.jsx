@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./index.css";
+import "./components/sections/InfoCards/cards.css"
 
 import Navbar from "./components/layout/Navbar/Navbar";
 import Hero from "./components/sections/Hero/Hero";
@@ -16,6 +17,12 @@ import FutureProjectCard from "./components/sections/InfoCards/FutureProjectCard
 import "./components/sections/InfoCards/cards.css"
 import TechStackCard from "./components/sections/TechStack/TechStackCard";
 import MyCV from "./components/sections/CV/MyCV";
+import RotatingComponents from "./components/ui/RotatingComponents";
+import GitHubButton from "./components/ui/Githubbutton";
+import LeftCard from "./components/sections/InfoCards/LeftCard";
+import TopRightCard from "./components/sections/InfoCards/TopRightCard";
+import BottomRightCard from "./components/sections/InfoCards/BottomRightCard";
+import ProjectCards from "./components/sections/ProjectsCard/ProjectCard";
 
 function App() {
   const [activeSection, setActiveSection] = useState("home");
@@ -51,20 +58,16 @@ function App() {
     <div className="app">
       <Navbar activeSection={activeSection} />
       <Hero />
+      
       <About />
       <MyCV/>
-      <div className="main-layout">
-      <div className="left-column">
-        
-        <HeroCard />
-        <CTAProjectCard />
-      </div>
+      <ProjectCards/>
+      
+      
+      <GitHubButton/>
 
-      <div className="right-column">
-        <FutureProjectCard/>
-      </div>
-    </div>
-      <Projects />
+      
+      
       <Experience />
       <TechStackCard/>
       <CodingProfiles profiles={codingProfiles} />
