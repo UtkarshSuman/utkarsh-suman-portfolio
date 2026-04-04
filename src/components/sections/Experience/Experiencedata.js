@@ -17,7 +17,7 @@ export const experiences = [
     endDate: "Feb 2026",
     title: "Campus Ambassador",
     company: "eDC IIT DELHI",
-    logo: "",
+    logo: "/images/edc.jpg",
     logoFallback: "M",
     description:
       "Represented EDC IIT Delhi and promoted entrepreneurship initiatives among students.Organized outreach activities to increase participation in innovation and startup events.Collaborated with the EDC team to spread awareness about entrepreneurial opportunities.",

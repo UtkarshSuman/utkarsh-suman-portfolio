@@ -17,33 +17,41 @@
 }
 
 .profile-icon {
-  width: 100%;
-  height: 70%;
-  border-radius: 12px;
+  width: 1000px;
+  height: 700px;
+  border-radius: 120px;
   object-fit: contain;
   margin-bottom: 20px;
+}
+
+#profileimage{
+  height: 1000px;
+  width: 100%;
 }
 
 .profile-card {
   display: flex;
   flex-direction: column;
   align-items: center;
-
+  
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(10px);
   border-radius: 15px;
   padding: 10px 10px;
-  height: 365px;
-  width: 430px;
+  height: 398px;
+  width: 300px;
   text-align: center;
   transition: 0.3s ease;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 
-.profile-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+.sc-logo-side {
+  transition: clip-path 0.1s ease;
+}
+
+.sc-handle {
+  transition: left 0.1s ease;
 }
 
 .solved-text {
@@ -57,16 +65,14 @@
 }
 
 
-.profile-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-}
 
 
 
-/* 🔥 PUSH BUTTON TO BOTTOM */
+
+/*  PUSH BUTTON TO BOTTOM */
 .profile-btn {
   margin-top: auto;   /* this pushes button down */
+  width: 200px;
   display: inline-block;
   margin-bottom: 2.3px;
   padding: 10px 20px;
@@ -82,6 +88,3 @@
   opacity: 0.8;
 }
 
-.profile-btn:hover {
-  opacity: 0.8;
-}

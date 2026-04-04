@@ -6,13 +6,13 @@
   --bg-card:        #0d1014;
   --bg-card-hover:  #111518;
   --border:         rgba(255, 255, 255, 0.06);
-  --border-hover:   rgba(190, 255, 0, 0.28);
-  --accent:         #beff00;
+  --border-hover:   rgba(0, 217, 255, 0.28);
+  --accent:         #3265e6;
   --accent-dim:     rgba(190, 255, 0, 0.12);
   --text-primary:   #eef2f7;
   --text-secondary: #4a5568;
   --text-muted:     #2d3748;
-  --live-green:     #39d98a;
+  --live-green:     #2f6d4e;
   --radius-card:    16px;
   --radius-btn:     8px;
   --font-display:   'Syne', sans-serif;
@@ -23,17 +23,55 @@
 /* ── Page wrapper ──────────────────────────────────────────────────────────── */
 .pc-page {
   min-height: 100vh;
-  background: var(--bg-page);
+  background: #07090f; 
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 72px 24px 80px;
+  position: relative;
+  overflow: hidden;
 }
  
+.pc-bg-dots {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 28px 28px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.pc-blob {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(120px);
+  z-index: 0;
+}
+
+.pc-blob-l {
+  width: 500px;
+  height: 500px;
+  top: -120px;
+  left: -150px;
+  background: rgba(100, 80, 220, 0.07);
+}
+
+.pc-blob-r {
+  width: 400px;
+  height: 400px;
+  bottom: -100px;
+  right: -100px;
+  background: rgba(0, 200, 255, 0.05);
+}
+
+
 /* ── Section header ────────────────────────────────────────────────────────── */
 .pc-header {
   text-align: center;
   margin-bottom: 56px;
+  position: relative;
+  z-index: 1;
 }
  
 .pc-header__eyebrow {
@@ -75,6 +113,8 @@
   justify-content: center;
   width: 100%;
   max-width: 1100px;
+  position: relative;
+  z-index: 1;
 }
  
 /* ── Card ──────────────────────────────────────────────────────────────────── */
@@ -91,6 +131,7 @@
     box-shadow var(--transition),
     background var(--transition);
   position: relative;
+  backdrop-filter: blur(6px);
 }
  
 .pc-card:hover {
@@ -341,7 +382,7 @@
  
 .pc-card:hover .pc-link {
   background: var(--accent-dim);
-  border-color: rgba(190, 255, 0, 0.35);
+  border-color: rgba(16, 231, 59, 0.35);
   color: var(--accent);
   box-shadow: 0 0 16px rgba(190, 255, 0, 0.08);
 }

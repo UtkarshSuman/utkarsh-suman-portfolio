@@ -1,5 +1,6 @@
 import "./ProjectCard.css";
 import projects from "./projectdata.js";
+import Githubbutton from "../../ui/Githubbutton.jsx";
  
 // ── Arrow icon ────────────────────────────────────────────────────────────────
 function ArrowRight() {
@@ -108,6 +109,11 @@ function ProjectCard({ project }) {
 export default function ProjectCards() {
   return (
     <main className="pc-page">
+      
+      {/* Background layers */}
+      <div className="pc-bg-dots"></div>
+      <div className="pc-blob pc-blob-l"></div>
+      <div className="pc-blob pc-blob-r"></div>
       {/* Section header */}
       <header className="pc-header">
         <p className="pc-header__eyebrow">// portfolio</p>
@@ -125,6 +131,7 @@ export default function ProjectCards() {
           <ProjectCard key={project.id} project={project} />
         ))}
       </div>
+      <Githubbutton/>
     </main>
   );
 }

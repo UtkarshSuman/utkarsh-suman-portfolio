@@ -19,6 +19,7 @@ body {
 .navbar-inner {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 30px;
   padding: 12px 30px;
   border-radius: 50px;
@@ -39,6 +40,12 @@ body {
 /* ================= NAV ITEMS ================= */
 .nav-item {
   position: relative;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
 }
 
 .navbar button {
@@ -110,9 +117,9 @@ body {
   transform: translateY(-6.8px) rotate(-45deg);
 }
 
-/* ================= BRAND (mobile only) ================= */
+/* ================= BRAND  ================= */
 .navbar-brand {
-  display: none;
+  display: flex;
   align-items: center;
   gap: 10px;
   cursor: pointer;

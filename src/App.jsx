@@ -23,6 +23,9 @@ import LeftCard from "./components/sections/InfoCards/LeftCard";
 import TopRightCard from "./components/sections/InfoCards/TopRightCard";
 import BottomRightCard from "./components/sections/InfoCards/BottomRightCard";
 import ProjectCards from "./components/sections/ProjectsCard/ProjectCard";
+import CodingProfiles2 from "./components/sections/CodingProfiles/CodingProfiles2";
+import WorkExperience from "./components/sections/Experience/Workexperience";
+import DownloadCVButton from "./components/ui/Downloadcvbutton";
 
 function App() {
   const [activeSection, setActiveSection] = useState("home");
@@ -60,18 +63,13 @@ function App() {
       <Hero />
       
       <About />
-      <MyCV/>
-      <ProjectCards/>
       
+      <ProjectCards/>      
       
-      <GitHubButton/>
-
-      
-      
-      <Experience />
-      <TechStackCard/>
-      <CodingProfiles profiles={codingProfiles} />
+      <WorkExperience></WorkExperience>
+      <CodingProfiles2></CodingProfiles2>
       <Contact />
+      <MyCV/>
       <Footer />
     </div>
   );

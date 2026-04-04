@@ -9,6 +9,7 @@ const GitHubButton = ({ username = "yourusername" }) => {
         @import url('https://fonts.googleapis.com/css2?family=Syne:wght@600;700&display=swap');
 
         .github-btn-wrapper {
+          margin-top:50px;
           display: inline-flex;
           align-items: center;
           justify-content: center;
@@ -25,7 +26,7 @@ const GitHubButton = ({ username = "yourusername" }) => {
         .github-btn-outer::before {
           content: '';
           position: absolute;
-          inset: -2px;
+          inset: -0.39px;
           border-radius: 999px;
           background: conic-gradient(
             from var(--angle, 0deg),

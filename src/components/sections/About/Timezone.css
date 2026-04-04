@@ -20,7 +20,7 @@
   border: 1px solid rgba(255, 255, 255, 0.07);
   border-radius: 20px;
   padding: 40px 24px;
-  margin-left: 20px;
+
   position: relative;
   overflow: hidden;
   text-align: center;
@@ -143,6 +143,7 @@
     border-radius: 24px;
     padding: 50px 40px;
     min-height: 280px;
+    margin-left: 20px;
   }
 
   .tz-offset {

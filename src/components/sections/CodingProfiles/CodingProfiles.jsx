@@ -12,7 +12,7 @@ function CodingProfiles({ profiles = [], title = "Coding Profiles" }) {
             
             {/* Top Image (NOT clickable) */}
             {profile.icon && (
-              <img
+              <img id="profileimage"
                 src={profile.icon}
                 alt={profile.platform}
                 className="profile-icon"

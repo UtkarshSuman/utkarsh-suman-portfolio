@@ -91,13 +91,14 @@ function Navbar({ activeSection }) {
         className={`navbar ${scrolled ? "navbar-scrolled" : ""}`}
       >
         <div className="navbar-inner" ref={innerRef}>
-          {/* Brand — mobile only */}
+          {/* Brand  */}
           <div className="navbar-brand" onClick={() => scrollTo("about")}>
             <div className="logo-icon">US</div>
             <span className="logo-name">Utkarsh</span>
           </div>
 
           {/* Desktop nav links */}
+          <div className="nav-links">
           {sections.map((item) => (
             <div key={item} className="nav-item">
               <button
@@ -111,6 +112,7 @@ function Navbar({ activeSection }) {
               )}
             </div>
           ))}
+          </div>
 
           {/* Hamburger */}
           <div
