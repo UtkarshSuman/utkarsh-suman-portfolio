@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const GitHubButton = ({ username = "yourusername" }) => {
+const GitHubButton = ({ username = "UtkarshSuman" }) => {
   const [hovered, setHovered] = useState(false);
 
   return (
@@ -9,7 +9,7 @@ const GitHubButton = ({ username = "yourusername" }) => {
         @import url('https://fonts.googleapis.com/css2?family=Syne:wght@600;700&display=swap');
 
         .github-btn-wrapper {
-          margin-top:50px;
+          margin-top:60px;
           display: inline-flex;
           align-items: center;
           justify-content: center;

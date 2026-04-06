@@ -58,20 +58,24 @@ function App() {
   }, []);
 
   return (
-    <div className="app">
-      <Navbar activeSection={activeSection} />
-      <Hero />
-      
-      <About />
-      
-      <ProjectCards/>      
-      
-      <WorkExperience></WorkExperience>
-      <CodingProfiles2></CodingProfiles2>
-      <Contact />
-      <MyCV/>
-      <Footer />
-    </div>
+  <div className="app">
+
+    {/*GLOBAL BACKGROUND */}
+    <div className="bg-dots"></div>
+    <div className="bg-blob bg-blob-l"></div>
+    <div className="bg-blob bg-blob-r"></div>
+
+    <Navbar activeSection={activeSection} />
+    <Hero />
+    <About />
+    <ProjectCards />      
+    <WorkExperience />
+    <CodingProfiles2 />
+   
+    <Contact/>
+   
+    <Footer />
+  </div>
   );
 }
 

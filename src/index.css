@@ -22,6 +22,52 @@ body {
   color: white;
   scroll-behavior: smooth;
 }
+
+.app {
+  position: relative;
+  background: #07090f;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Dots */
+.bg-dots {
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 28px 28px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Blobs */
+.bg-blob {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(120px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bg-blob-l {
+  width: 500px;
+  height: 500px;
+  top: -120px;
+  left: -150px;
+  background: rgba(100, 80, 220, 0.07);
+}
+
+.bg-blob-r {
+  width: 400px;
+  height: 400px;
+  bottom: -100px;
+  right: -100px;
+  background: rgba(0, 200, 255, 0.05);
+}
+
+
+
+
 @keyframes blink {
   0% { opacity: 1; }
   50% { opacity: 0; }
@@ -42,6 +88,7 @@ body {
 .glow {
   box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
 }
+
 .gradient-text {
   background: linear-gradient(90deg, #00f5ff, #ff00ff);
   background-clip: text;            

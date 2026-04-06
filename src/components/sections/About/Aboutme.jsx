@@ -18,7 +18,7 @@ export default function AboutMe() {
   }, []);
 
   return (
-    <section className="about-section" ref={cardRef}>
+    <section id="about" className="about-section" ref={cardRef}>
       <div className="about-card">
         {/* Label */}
         <span className="about-label">ABOUT ME</span>

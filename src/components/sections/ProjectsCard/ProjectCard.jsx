@@ -108,12 +108,8 @@ function ProjectCard({ project }) {
 // ── Page / grid wrapper ───────────────────────────────────────────────────────
 export default function ProjectCards() {
   return (
-    <main className="pc-page">
+    <main id="projects" className="pc-page">
       
-      {/* Background layers */}
-      <div className="pc-bg-dots"></div>
-      <div className="pc-blob pc-blob-l"></div>
-      <div className="pc-blob pc-blob-r"></div>
       {/* Section header */}
       <header className="pc-header">
         <p className="pc-header__eyebrow">// portfolio</p>

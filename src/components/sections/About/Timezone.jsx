@@ -4,21 +4,21 @@ import "./TimeZone.css";
 export default function TimeZone() {
   const [time, setTime] = useState("");
   const cardRef = useRef(null);
+  const timeZone = "Asia/Kolkata"; 
 
   useEffect(() => {
     const tick = () => {
       const now = new Date();
-      // UTC-5
-      const utcOffset = now.getTime() + now.getTimezoneOffset() * 60000;
-      const local = new Date(utcOffset - 5 * 3600000);
-      setTime(
-        local.toLocaleTimeString("en-US", {
-          hour: "2-digit",
-          minute: "2-digit",
-          second: "2-digit",
-          hour12: true,
-        })
-      );
+
+      const istTime = now.toLocaleTimeString("en-IN", {
+        timeZone: timeZone,
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+        hour12: true,
+      });
+
+      setTime(istTime);
     };
     tick();
     const id = setInterval(tick, 1000);
@@ -30,7 +30,7 @@ export default function TimeZone() {
       ([entry]) => {
         if (entry.isIntersecting) cardRef.current?.classList.add("visible");
       },
-      { threshold: 0.2 }
+      { threshold: 0.2 },
     );
     if (cardRef.current) observer.observe(cardRef.current);
     return () => observer.disconnect();
@@ -48,7 +48,7 @@ export default function TimeZone() {
 
         {/* Content */}
         <div className="tz-content">
-          <div className="tz-offset">UTC -5</div>
+          <div className="tz-offset">IST (UTC +5:30)</div>
           <div className="tz-badge">ALWAYS ONLINE</div>
           <div className="tz-live-time">{time}</div>
           <h3 className="tz-title">Global Connectivity</h3>

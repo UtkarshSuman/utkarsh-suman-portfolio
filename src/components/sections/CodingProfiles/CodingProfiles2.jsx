@@ -188,10 +188,7 @@ export default function CodingProfiles() {
   const titleParts = sectionTitle.split(/(Coding Profiles)/);
 
   return (
-    <section id="coding" className="cp-section">
-      <div className="cp-bg-dots" aria-hidden="true" />
-      <div className="cp-blob cp-blob-l" aria-hidden="true" />
-      <div className="cp-blob cp-blob-r" aria-hidden="true" />
+    <section id="coding" className="cp-section">     
 
       <div className="cp-container">
         {/* Title */}

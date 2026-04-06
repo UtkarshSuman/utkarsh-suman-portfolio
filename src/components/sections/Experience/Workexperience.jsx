@@ -228,12 +228,8 @@ export default function WorkExperience() {
   const rowRefs = useRef(experiences.map(() => ({ current: null })));
 
   return (
-    <section className="wex-root">
-      {/* Background layers */}
-     <div className="wex-bg-dots"></div>
-      <div className="wex-blob wex-blob-l"></div>
-      <div className="wex-blob wex-blob-r"></div>
-      <div className="wex-ambient-glow" />
+    <section id="experience" className="wex-root">
+      
 
       {/* ── Header ── */}
       <div className="wex-header">
