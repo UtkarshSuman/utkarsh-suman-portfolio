@@ -10,23 +10,11 @@ import Experience from "./components/sections/Experience/Experience";
 import { codingProfiles } from "./data/portfolioData";
 import Contact from "./components/sections/Contact/Contact";
 import Footer from "./components/layout/Footer/Footer";
-import HeroCard from "./components/sections/InfoCards/HeroCard";
-import CTAProjectCard from "./components/sections/InfoCards/CTAProjectCard";
-import FutureProjectCard from "./components/sections/InfoCards/FutureProjectCard";
 import "./components/sections/InfoCards/cards.css"
-import TechStackCard from "./components/sections/TechStack/TechStackCard";
-import MyCV from "./components/sections/CV/MyCV";
-import Badges from "./components/ui/Badges";
-import GitHubButton from "./components/ui/Githubbutton";
-import LeftCard from "./components/sections/InfoCards/LeftCard";
-import TopRightCard from "./components/sections/InfoCards/TopRightCard";
-import BottomRightCard from "./components/sections/InfoCards/BottomRightCard";
 import ProjectCards from "./components/sections/ProjectsCard/ProjectCard";
 import CodingProfiles from "./components/sections/CodingProfiles/CodingProfile";
 import WorkExperience from "./components/sections/Experience/Workexperience";
-import DownloadCVButton from "./components/ui/Downloadcvbutton";
-import CVCard from "./components/ui/Cvcard";
-import HeroSection from "./components/sections/Hero/HeroSection";
+
 
 
 function App() {

@@ -1,19 +1,8 @@
-// WorkExperience.jsx
-// All layout/visual styles live in WorkExperience.css.
-// Inline styles are used ONLY for per-company dynamic values
-// (accent color, background tint, border color) that cannot
-// be expressed as static CSS classes.
-//
-// Usage:
-//   import WorkExperience from "./WorkExperience";
-//   <WorkExperience />
-//
-// Data:
-//   Edit data.js to change companies, roles, descriptions, tags.
+
 
 import { useEffect, useRef, useState } from "react";
 import { experiences } from "./Data";
-import "./WorkExperience.css";
+import "./Workexperience.css";
 
 /* ─────────────────────────────────────────────
    Hook — returns how far (0–100 %) the timeline
