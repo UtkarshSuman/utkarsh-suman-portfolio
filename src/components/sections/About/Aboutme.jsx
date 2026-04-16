@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import "./AboutMe.css";
+import "./Aboutme.css";
 
 export default function AboutMe() {
   const cardRef = useRef(null);
