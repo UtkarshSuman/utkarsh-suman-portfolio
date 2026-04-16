@@ -16,7 +16,7 @@ import FutureProjectCard from "./components/sections/InfoCards/FutureProjectCard
 import "./components/sections/InfoCards/cards.css"
 import TechStackCard from "./components/sections/TechStack/TechStackCard";
 import MyCV from "./components/sections/CV/MyCV";
-import RotatingComponents from "./components/ui/RotatingComponents";
+import Badges from "./components/ui/Badges";
 import GitHubButton from "./components/ui/Githubbutton";
 import LeftCard from "./components/sections/InfoCards/LeftCard";
 import TopRightCard from "./components/sections/InfoCards/TopRightCard";

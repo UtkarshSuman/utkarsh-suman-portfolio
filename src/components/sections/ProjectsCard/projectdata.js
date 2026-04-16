@@ -1,53 +1,93 @@
 const projects = [
   {
     id: 1,
-    title: "MiniLink",
+    title: "JokesBox",
     description:
-      "Create your link-in-bio page in seconds. Fully customisable, free forever — no account needed.",
+      "Share jokes, discover new ones, and interact with others in real time, share, laugh and connect.",
     image:
       "/images/jokebox.png",
-    popLabel: "link-in-bio",       // small label shown on image pop-out
-    liveLink: "https://minilink.example.com",
-    githubLink: "https://github.com/yourusername/minilink",
+    popLabel: "jokes & jokes",       // small label shown on image pop-out
+    liveLink: "https://jokesbox.vercel.app/",
+    githubLink: "https://github.com/UtkarshSuman/API",
     techStack: [
-      { name: "Next.js",      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" },
-      { name: "TypeScript",   icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
-      { name: "Tailwind CSS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" },
-      { name: "Vercel",       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg" },
+      { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+      { name: "JavaScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
+      { name: "Node.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
+      { name: "Vercel", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg" },
     ],
   },
   {
     id: 2,
-    title: "DevBoard",
+    title: "Mini-Postman",
     description:
-      "A minimal developer dashboard that unifies GitHub activity, open PRs, and issue tracking.",
+      "A minimal Postman-like tool to send HTTP requests, view live responses, and debug APIs with ease.",
     image:
-      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&fit=crop",
-    popLabel: "dashboard",
-    liveLink: "https://devboard.example.com",
-    githubLink: "https://github.com/yourusername/devboard",
+      "/images/minipostman.png",
+    popLabel: "mini-postman",
+    liveLink: "https://github.com/UtkarshSuman/Mini-Postman-App",
+    githubLink: "https://github.com/UtkarshSuman/Mini-Postman-App",
     techStack: [
-      { name: "React",   icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
       { name: "Node.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
-      { name: "MongoDB", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
-      { name: "Redis",   icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" },
+      {
+        name: "Express.js",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" 
+      },
+      {
+  name: "REST API",
+  icon: "https://cdn-icons-png.flaticon.com/512/2165/2165004.png"
+},
+      
     ],
   },
   {
     id: 3,
-    title: "CodeSnap",
+    title: "Tic-Tac-Toe",
     description:
-      "Turn raw code snippets into beautiful, shareable screenshots with one click.",
+      "Tic-Tac-Toe Game with Dynamic Gameplay and Real-Time Updates using DOM manipulation.",
     image:
-      "https://images.unsplash.com/photo-1555066931-4365d14431b9?w=600&h=400&fit=crop",
-    popLabel: "code → screenshot",
-    liveLink: "https://codesnap.example.com",
-    githubLink: "https://github.com/yourusername/codesnap",
+      "/images/tictactoe.png",
+    popLabel: "Game ",
+    liveLink: "https://github.com/UtkarshSuman/TIC-TAC-TOE-GAME",
+    githubLink: "https://github.com/UtkarshSuman/TIC-TAC-TOE-GAME",
     techStack: [
-      { name: "Vue.js",  icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" },
-      { name: "Python",  icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
-      { name: "Docker",  icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" },
-    ],
+  { 
+    name: "HTML5", 
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" 
+  },
+  { 
+    name: "CSS3", 
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" 
+  },
+  { 
+    name: "JavaScript", 
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" 
+  }
+],
+  },
+  {
+    id: 4,
+    title: "Task Manager",
+    description:
+      "Manage your tasks efficiently and stay organized with secure and seamless tracking.",
+    image:
+      "/images/taskmanager2.png",
+    popLabel: "Manage Task",
+    liveLink: "https://github.com/UtkarshSuman/Task-Manager",
+    githubLink: "https://github.com/UtkarshSuman/Task-Manager",
+    techStack: [
+  { 
+    name: "Node.js", 
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" 
+  },
+  { 
+    name: "Express.js", 
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" 
+  },
+  { 
+    name: "PostgreSQL", 
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" 
+  }
+],
   },
 ];
 

@@ -30,38 +30,45 @@ const Badges = () => {
   const currentRole = roles[currentRoleIndex];
 
   return (
-  <div className="hero-actions">
-    <a href="#projects" className="btn btn-outline">
-      <span className="btn-border-base" />
-      <Grid size={15} />
-      View projects
-    </a>
+    <div className="hero-actions">
+      <a href="#projects" className="btn btn-outline">
+        <span className="btn-border-base" />
+        <Grid size={15} />
+        View projects
+      </a>
 
-    <div className="role-badge-wrapper">
-      <div className="role-badge">
-        <div
-          className="role-indicator"
-          style={{
-            background: currentRole.color,
-            boxShadow: `0 0 10px ${currentRole.color}88`,
-          }}
-        />
-        <div className="role-text-container">
-          <span
-            key={currentRoleIndex}
-            className={`role-text ${animate ? "slide-out" : "slide-in"}`}
-          >
-            {currentRole.title}
-          </span>
+      <div className="role-badge-wrapper">
+        <div className="role-badge">
+          <div
+            className="role-indicator"
+            style={{
+              background: currentRole.color,
+              boxShadow: `0 0 10px ${currentRole.color}88`,
+            }}
+          />
+          <div className="role-text-container">
+            <span
+              key={currentRoleIndex}
+              className={`role-text ${animate ? "slide-out" : "slide-in"}`}
+            >
+              {currentRole.title}
+            </span>
+          </div>
         </div>
       </div>
-    </div>
 
-    <a href="/pdf/resume.pdf" target="_blank" rel="noreferrer" className="btn btn-solid">
-      <FileText size={15} />
-      View my resume
-    </a>
-  </div>
+      <a
+        href="/public/pdf/resume.pdf"
+        className="btn btn-solid"
+        onClick={(e) => {
+          e.preventDefault();
+          window.open("/public/pdf/resume.pdf", "_blank");
+        }}
+      >
+        <FileText size={15} />
+        View my resume
+      </a>
+    </div>
   );
 };
 

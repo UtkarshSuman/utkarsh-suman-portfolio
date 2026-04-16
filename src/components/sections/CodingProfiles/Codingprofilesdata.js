@@ -6,21 +6,21 @@ const codingProfilesData = {
     {
       id: "leetcode",
       platform: "LeetCode",
-      description: "Solved over 1150 questions with a streak of 840 days.",
+      description: "Solved over 167 questions with a streak of 149 days.",
       link: "https://leetcode.com/u/UtkarshSuman/",
       btnText: "Visit LeetCode",
       logoUrl: "/images/leetcodeprior.png",
       screenshotUrl: "/images/leetcode.webp",
       accentColor: "#f89f1b",
       stats: [
-        { label: "Rank", value: "#30" },
+        { label: "Solved", value: "167" },
         { label: "Streak", value: "140+" },
       ],
     },
     {
       id: "codeforces",
       platform: "Codeforces",
-      description: "Div 3, Solved over 450 problems with a streak of 1040 days.",
+      description: "Div 4, Constantly solving questions to improve logic building.",
       link: "https://codeforces.com/profile/Utkarshsuman",
       btnText: "Visit Codeforces",
       logoUrl: "/images/codeforcesss.png",
@@ -34,7 +34,7 @@ const codingProfilesData = {
     {
       id: "gfg",
       platform: "GeeksforGeeks",
-      description: "Institute Rank 30, solved 775 ques with a streak of 670 days.",
+      description: "Institute Rank 2000, solving mcq, development and tests.",
       link: "https://www.geeksforgeeks.org/profile/utkarshz0gk?tab=activity",
       btnText: "Visit GeeksforGeeks",
       logoUrl: "/images/gfgss.png",
@@ -49,7 +49,7 @@ const codingProfilesData = {
     {
       id: "ninjas",
       platform: "Coding Ninjas",
-      description: "675-day streak, solved over 740 MCQs and 75 coding problems.",
+      description: "Exploring data structures through hands-on challenges.",
       link: "https://www.naukri.com/code360/profile/ed9625a5-4705-4709-8e9d-e96a04a2ee0a",
       btnText: "Visit Coding Ninjas",
       logoUrl: "/images/codingninjass.png",
