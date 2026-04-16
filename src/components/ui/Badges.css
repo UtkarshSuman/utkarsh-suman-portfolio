@@ -1,0 +1,318 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap');
+
+/* ─────────────────────────────────────
+   LAYOUT
+───────────────────────────────────── */
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* ─────────────────────────────────────
+   BASE BUTTON (UPGRADED)
+───────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+
+  padding: 13px 22px;
+  border-radius: 12px;
+
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+
+  transition:
+    transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.3s ease,
+    filter 0.3s ease;
+}
+
+/* Press */
+.btn:active {
+  transform: scale(0.96);
+}
+
+/* Soft top light */
+.btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.12),
+    transparent 40%
+  );
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* ─────────────────────────────────────
+   VIEW PROJECTS (NEON OUTLINE)
+───────────────────────────────────── */
+.btn-outline {
+  background: rgba(99, 102, 241, 0.06);
+  color: #c7d2fe;
+
+  border: 1px solid rgba(99, 102, 241, 0.25);
+
+  box-shadow:
+    inset 0 0 0 1px rgba(99, 102, 241, 0.1),
+    0 4px 20px rgba(99, 102, 241, 0.15);
+}
+
+/* Glow layer */
+.btn-outline::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+
+  background: radial-gradient(
+    120% 120% at 50% 0%,
+    rgba(129, 140, 248, 0.25),
+    transparent 60%
+  );
+
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.btn-outline:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    inset 0 0 0 1px rgba(129, 140, 248, 0.25),
+    0 10px 35px rgba(99, 102, 241, 0.35);
+}
+
+.btn-outline:hover::before {
+  opacity: 1;
+}
+
+/* ─────────────────────────────────────
+   VIEW RESUME (PRIMARY CTA)
+───────────────────────────────────── */
+.btn-solid {
+  background: linear-gradient(135deg, #4f46e5, #6366f1);
+  color: #ffffff;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  box-shadow:
+    0 6px 20px rgba(79, 70, 229, 0.35),
+    inset 0 1px 0 rgba(255,255,255,0.2);
+}
+
+/* Glow aura */
+.btn-solid::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+
+  background: radial-gradient(
+    60% 80% at 50% 100%,
+    rgba(99, 102, 241, 0.5),
+    transparent
+  );
+
+  opacity: 0.6;
+  z-index: -1;
+  filter: blur(10px);
+}
+
+.btn-solid:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 12px 35px rgba(99, 102, 241, 0.5),
+    inset 0 1px 0 rgba(255,255,255,0.25);
+
+  filter: brightness(1.05);
+}
+
+/* ─────────────────────────────────────
+   ROLE BADGE (UPGRADED)
+───────────────────────────────────── */
+.role-badge-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.role-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 10px 16px 10px 13px;
+  border-radius: 12px;
+
+  background: linear-gradient(145deg, #111827, #0b0f1a);
+  border: 1px solid rgba(255,255,255,0.08);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.05),
+    0 6px 18px rgba(0,0,0,0.45);
+
+  min-width: 220px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Ambient moving light */
+.role-badge::after {
+  content: "";
+  position: absolute;
+  inset: -40%;
+
+  background: radial-gradient(
+    circle,
+    rgba(255,255,255,0.08),
+    transparent 60%
+  );
+
+  animation: badgeGlow 6s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes badgeGlow {
+  0%   { transform: translateX(-30%) rotate(0deg); }
+  100% { transform: translateX(30%) rotate(360deg); }
+}
+
+/* ─────────────────────────────────────
+   ROLE INDICATOR (ALIVE DOT)
+───────────────────────────────────── */
+.role-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  position: relative;
+
+  box-shadow: 0 0 10px currentColor;
+  transition: background 0.4s ease, box-shadow 0.4s ease;
+}
+
+.role-indicator::before {
+  content: "";
+  position: absolute;
+  inset: -5px;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.2;
+
+  animation: pulse-ring 1.8s ease-out infinite;
+}
+
+@keyframes pulse-ring {
+  0%   { transform: scale(1); opacity: 0.3; }
+  70%  { transform: scale(2.4); opacity: 0; }
+  100% { opacity: 0; }
+}
+
+/* ─────────────────────────────────────
+   ROLE TEXT
+───────────────────────────────────── */
+.role-text-container {
+  position: relative;
+  height: 20px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.role-text {
+  position: absolute;
+  left: 0;
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.82);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.role-text.slide-in {
+  animation: slideIn 0.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.role-text.slide-out {
+  animation: slideOut 0.35s cubic-bezier(0.4, 0, 1, 1) forwards;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideOut {
+  from { opacity: 1; transform: translateY(0); }
+  to   { opacity: 0; transform: translateY(-10px); }
+}
+
+/* ─────────────────────────────────────
+   RESPONSIVE (UNCHANGED SIZES)
+───────────────────────────────────── */
+@media (min-width: 640px) {
+  .btn {
+    font-size: 14px;
+    padding: 13px 22px;
+    height: 48px;
+  }
+
+  .role-badge {
+    min-width: 230px;
+    height: 48px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .btn {
+    font-size: 15px;
+    padding: 14px 26px;
+    height: 52px;
+  }
+
+  .role-badge {
+    min-width: 250px;
+    height: 52px;
+  }
+
+  .role-text {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 639px) {
+  .hero-actions {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .role-badge-wrapper {
+    display: none;
+  }
+
+  .btn {
+    flex: 1 1 calc(50% - 6px);
+    min-width: 130px;
+    font-size: 13px;
+    padding: 12px 14px;
+  }
+}

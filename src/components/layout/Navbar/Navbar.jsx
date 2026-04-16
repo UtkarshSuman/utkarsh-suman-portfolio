@@ -183,7 +183,7 @@ function Navbar({ activeSection }) {
                 initial={{ opacity: 0, y: 8 }}
                 animate={{ opacity: 1, y: 0, transition: { delay: 0.36, duration: 0.2 } }}
               >
-                <button className="book-call-btn">Book a Call</button>
+                {/* <button className="book-call-btn">Book a Call</button> */}
               </motion.div>
             </motion.div>
           </>

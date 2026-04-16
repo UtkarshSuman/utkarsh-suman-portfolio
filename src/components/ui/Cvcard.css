@@ -1,0 +1,297 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* ══════════════════════════════════
+   CARD ROOT
+══════════════════════════════════ */
+.cvc-root {
+  position: relative;
+  background: #111827;           /* matches Tech Stack / UTC cards */
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 20px;
+  padding: 24px;
+  overflow: hidden;
+  transition:
+    transform 0.18s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.3);
+  cursor: default;
+  will-change: transform;
+}
+
+.cvc-hovered {
+  border-color: rgba(139, 92, 246, 0.3);
+  box-shadow:
+    0 16px 48px rgba(0,0,0,0.5),
+    0 0 0 1px rgba(139, 92, 246, 0.12),
+    0 0 40px rgba(139, 92, 246, 0.06);
+}
+
+/* Corner glows */
+.cvc-glow-tl {
+  position: absolute;
+  top: -60px; left: -60px;
+  width: 180px; height: 180px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(139,92,246,0.14) 0%, transparent 70%);
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.cvc-glow-br {
+  position: absolute;
+  bottom: -50px; right: -50px;
+  width: 140px; height: 140px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0,224,255,0.07) 0%, transparent 70%);
+  pointer-events: none;
+}
+.cvc-hovered .cvc-glow-tl {
+  opacity: 1.4;
+}
+
+/* ══════════════════════════════════
+   HEADER ROW
+══════════════════════════════════ */
+.cvc-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+/* Icon box — same style as Tech Stack icon */
+.cvc-icon-box {
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  background: rgba(99, 102, 241, 0.12);
+  border: 1px solid rgba(99, 102, 241, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #818cf8;
+  flex-shrink: 0;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.cvc-hovered .cvc-icon-box {
+  background: rgba(99, 102, 241, 0.2);
+  transform: rotate(-6deg) scale(1.08);
+}
+
+.cvc-header-label {
+  font-family: 'Syne', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.2px;
+  flex: 1;
+}
+
+/* Pulsing availability dot */
+.cvc-live-dot {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 10px;
+  height: 10px;
+}
+.cvc-live-dot::after {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #4ade80;
+  display: block;
+  box-shadow: 0 0 6px #4ade8099;
+}
+.cvc-dot-ring {
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  border: 1.5px solid #4ade80;
+  opacity: 0.5;
+  animation: dot-pulse 2s ease-out infinite;
+}
+@keyframes dot-pulse {
+  0%   { transform: scale(0.8); opacity: 0.6; }
+  70%  { transform: scale(1.6); opacity: 0; }
+  100% { opacity: 0; }
+}
+
+/* ══════════════════════════════════
+   IDENTITY
+══════════════════════════════════ */
+.cvc-identity {
+  margin-bottom: 20px;
+}
+
+.cvc-name {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(18px, 2.5vw, 22px);
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 5px;
+  letter-spacing: -0.2px;
+}
+
+.cvc-role {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.45);
+  margin: 0;
+  letter-spacing: 0.3px;
+}
+
+/* ══════════════════════════════════
+   STATS ROW
+══════════════════════════════════ */
+.cvc-stats {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 12px;
+  padding: 12px 16px;
+}
+
+.cvc-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+  align-items: center;
+}
+
+.cvc-stat-val {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  font-weight: 500;
+  color: #a78bfa;
+  letter-spacing: 0.5px;
+}
+
+.cvc-stat-lbl {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 9px;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  color: rgba(255,255,255,0.3);
+  text-transform: uppercase;
+}
+
+.cvc-stat-sep {
+  width: 1px;
+  height: 28px;
+  background: rgba(255,255,255,0.07);
+  flex-shrink: 0;
+}
+
+/* ══════════════════════════════════
+   DIVIDER
+══════════════════════════════════ */
+.cvc-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(139,92,246,0.3), rgba(0,224,255,0.15), transparent);
+  margin-bottom: 20px;
+}
+
+/* ══════════════════════════════════
+   ACTION BUTTONS
+══════════════════════════════════ */
+.cvc-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.cvc-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  flex: 1;
+  padding: 11px 14px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease,
+              background 0.2s ease, color 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.cvc-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+/* Download button — filled purple */
+.cvc-btn-download {
+  background: rgba(139, 92, 246, 0.18);
+  border: 1px solid rgba(139, 92, 246, 0.35);
+  color: #c4b5fd;
+}
+.cvc-btn-download::before {
+  background: linear-gradient(135deg, rgba(139,92,246,0.25), rgba(109,40,217,0.15));
+}
+.cvc-btn-download:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(139,92,246,0.3);
+  color: #fff;
+}
+.cvc-btn-download:hover::before { opacity: 1; }
+
+/* Loading state */
+.cvc-btn-loading {
+  opacity: 0.75;
+  cursor: wait;
+}
+
+/* Done state */
+.cvc-btn-done {
+  background: rgba(74,222,128,0.12) !important;
+  border-color: rgba(74,222,128,0.3) !important;
+  color: #4ade80 !important;
+}
+
+/* Open button — outlined */
+.cvc-btn-open {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.6);
+}
+.cvc-btn-open::before {
+  background: rgba(0,224,255,0.07);
+}
+.cvc-btn-open:hover {
+  transform: translateY(-2px);
+  border-color: rgba(0,224,255,0.3);
+  color: #00e0ff;
+  box-shadow: 0 6px 20px rgba(0,224,255,0.1);
+}
+.cvc-btn-open:hover::before { opacity: 1; }
+
+/* Icon inside button */
+.cvc-btn-icon {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* Spinner */
+.cvc-spin {
+  animation: spin-anim 0.9s linear infinite;
+}
+@keyframes spin-anim {
+  to { transform: rotate(360deg); }
+}

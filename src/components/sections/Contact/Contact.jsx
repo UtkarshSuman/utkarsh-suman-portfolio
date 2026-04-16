@@ -3,8 +3,8 @@ import emailjs from "@emailjs/browser";
 import "./Contact.css";
 
 const SOCIAL_LINKS = [
-  { label: "GitHub", href: "https://github.com", icon: "GH" },
-  { label: "LinkedIn", href: "https://linkedin.com", icon: "LI" },
+  { label: "GitHub", href: "https://github.com/UtkarshSuman", icon: "GH" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/utkarsh-suman-5835a1345/", icon: "LI" },
   { label: "Twitter", href: "https://twitter.com", icon: "TW" },
 ];
 

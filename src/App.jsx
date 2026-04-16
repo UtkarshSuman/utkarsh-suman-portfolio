@@ -7,7 +7,6 @@ import Hero from "./components/sections/Hero/Hero";
 import About from "./components/sections/About/About";
 import Projects from "./components/sections/Projects/Projects";
 import Experience from "./components/sections/Experience/Experience";
-import CodingProfiles from "./components/sections/CodingProfiles/CodingProfiles";
 import { codingProfiles } from "./data/portfolioData";
 import Contact from "./components/sections/Contact/Contact";
 import Footer from "./components/layout/Footer/Footer";
@@ -23,9 +22,12 @@ import LeftCard from "./components/sections/InfoCards/LeftCard";
 import TopRightCard from "./components/sections/InfoCards/TopRightCard";
 import BottomRightCard from "./components/sections/InfoCards/BottomRightCard";
 import ProjectCards from "./components/sections/ProjectsCard/ProjectCard";
-import CodingProfiles2 from "./components/sections/CodingProfiles/CodingProfiles2";
+import CodingProfiles from "./components/sections/CodingProfiles/CodingProfile";
 import WorkExperience from "./components/sections/Experience/Workexperience";
 import DownloadCVButton from "./components/ui/Downloadcvbutton";
+import CVCard from "./components/ui/Cvcard";
+import HeroSection from "./components/sections/Hero/HeroSection";
+
 
 function App() {
   const [activeSection, setActiveSection] = useState("home");
@@ -68,9 +70,10 @@ function App() {
     <Navbar activeSection={activeSection} />
     <Hero />
     <About />
-    <ProjectCards />      
+    <ProjectCards />
+         
     <WorkExperience />
-    <CodingProfiles2 />
+    <CodingProfiles/>
    
     <Contact/>
    

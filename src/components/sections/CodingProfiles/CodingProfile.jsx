@@ -2,16 +2,10 @@ import React, {
   useEffect, useRef, useState, useCallback
 } from "react";
 import codingProfilesData from "./Codingprofilesdata";
-import "./CodingProfiles2.css";
+import "./CodingProfiles.css";
 
-/* ─────────────────────────────────────────
-   SPLIT-REVEAL CARD
-   Left side  → screenshot
-   Right side → platform logo
-   Vertical drag handle controls the split
-───────────────────────────────────────── */
 function SplitCard({ profile, index }) {
-  const [sliderPct, setSliderPct] = useState(72); // start showing mostly screenshot
+  const [sliderPct, setSliderPct] = useState(28); // start showing mostly screenshot
   const [dragging, setDragging] = useState(false);
   const [hintDone, setHintDone] = useState(false);
   const [cardVisible, setCardVisible] = useState(false);

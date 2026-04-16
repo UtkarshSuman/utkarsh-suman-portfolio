@@ -1,15 +1,18 @@
 import React, { Suspense, useRef, useState, useEffect } from "react";
+import { FileText, Grid } from "lucide-react";
 import { Canvas, useFrame } from "@react-three/fiber";
+import "./Hero.css";
 import {
   OrbitControls,
   useGLTF,
   Environment,
   Float,
-  Sparkles
+  Sparkles,
 } from "@react-three/drei";
 import { motion, useScroll, useTransform } from "framer-motion";
 import * as THREE from "three";
-import RotatingRoleBadge from "../../ui/RotatingComponents";
+import Badges from "../../ui/Badges";
+import DownloadCVButton from "../../ui/Downloadcvbutton";
 
 /* ================= ROBOT COMPONENT ================= */
 
@@ -43,24 +46,23 @@ function Robot({ mouse }) {
 /* ================= HERO SECTION ================= */
 
 function Hero() {
-
   const fullText = "Hi, I'm Utkarsh";
-const [displayedText, setDisplayedText] = useState("");
+  const [displayedText, setDisplayedText] = useState("");
 
-useEffect(() => {
-  let index = 0;
+  useEffect(() => {
+    let index = 0;
 
-  const interval = setInterval(() => {
-    setDisplayedText(fullText.slice(0, index + 1));
-    index++;
+    const interval = setInterval(() => {
+      setDisplayedText(fullText.slice(0, index + 1));
+      index++;
 
-    if (index === fullText.length) {
-      clearInterval(interval);
-    }
-  }, 80); // typing speed (lower = faster)
+      if (index === fullText.length) {
+        clearInterval(interval);
+      }
+    }, 80); // typing speed (lower = faster)
 
-  return () => clearInterval(interval);
-}, []);
+    return () => clearInterval(interval);
+  }, []);
 
   const isMobile = window.innerWidth < 768;
 
@@ -76,75 +78,71 @@ useEffect(() => {
 
   return (
     <section
-  id="hero"
-  onMouseMove={handleMouseMove}
-  style={{
-    minHeight: "100vh",
-    display: "flex",
-    flexDirection: "column" ,
-    alignItems: "center",
-    justifyContent: "center",
-    padding: isMobile ? "120px 5% 40px" : "0 5%",
-    background:
-      "radial-gradient(circle at top, #15103d, #302b63, #24243e)",
-    overflow: "hidden",
-    position: "relative",
-  }}
->
-
+      id="hero"
+      onMouseMove={handleMouseMove}
+      style={{
+        minHeight: "100vh",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        padding: isMobile ? "120px 5% 40px" : "0 5%",
+        background: "radial-gradient(circle at top, #15103d, #302b63, #24243e)",
+        overflow: "hidden",
+        position: "relative",
+      }}
+    >
       {/* ================= LEFT TEXT ================= */}
       <motion.div
         style={{
           color: "white",
           zIndex: 2,
-          y: yText
+          y: yText,
         }}
         initial={{ opacity: 0, x: -80 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 1 }}
       >
         <h1 style={{ fontSize: "3.9rem" }}>
-  {displayedText.includes("Utkarsh") ? (
-    <>
-      Hi, I'm{" "}
-      <span
-        style={{
-          background: "linear-gradient(90deg,#00f5ff,#ff00ff)",
-          WebkitBackgroundClip: "text",
-          WebkitTextFillColor: "transparent"
-        }}
-      >
-        Utkarsh
-      </span>
-    </>
-  ) : (
-    displayedText
-  )}
-  <span style={{ 
-  opacity: 0.7,
-  animation: "blink 1s infinite"
-}}>
-  |
-</span>
+          {displayedText.includes("Utkarsh") ? (
+            <>
+              Hi, I'm{" "}
+              <span
+                style={{
+                  background: "linear-gradient(90deg,#00f5ff,#ff00ff)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                }}
+              >
+                Utkarsh
+              </span>
+            </>
+          ) : (
+            displayedText
+          )}
+          <span
+            style={{
+              opacity: 0.7,
+              animation: "blink 1s infinite",
+            }}
+          >
+            |
+          </span>
+        </h1>
 
-</h1>
-
-
-        <p style={{ marginTop: "20px", opacity: 0.8,fontSize: "21.7px"
- }}>
-          Building Memorable  Experiences for People
+        <p style={{ marginTop: "20px", opacity: 0.8, fontSize: "21.7px" }}>
+          Building Memorable Experiences for People
         </p>
       </motion.div>
 
       {/* ================= 3D SCENE ================= */}
       <div
-  style={{
-    width: isMobile ? "100%" : "55%",
-    height: isMobile ? "350px" : "500px",
-    marginTop: isMobile ? "40px" : "0"
-  }}
->
-
+        style={{
+          width: isMobile ? "100%" : "55%",
+          height: isMobile ? "350px" : "500px",
+          marginTop: isMobile ? "40px" : "0",
+        }}
+      >
         <Canvas
           camera={{ position: [0, 1.5, 6], fov: 50 }}
           dpr={[1, 1.5]} // Performance optimization
@@ -171,13 +169,9 @@ useEffect(() => {
           </Suspense>
 
           {/* Auto cinematic camera movement */}
-          <OrbitControls
-            enableZoom={false}
-            autoRotate
-            autoRotateSpeed={0.8}
-          />
+          <OrbitControls enableZoom={false} autoRotate autoRotateSpeed={0.8} />
         </Canvas>
-        <RotatingRoleBadge/>
+        <Badges />
       </div>
     </section>
   );

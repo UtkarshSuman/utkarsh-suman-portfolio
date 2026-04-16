@@ -189,7 +189,7 @@
   align-items: center;
   gap: 14px;
   width: fit-content;
-  color: var(--text-muted);
+  color: rgba(192, 192, 192, 0.541);
   text-decoration: none;
   transition: color 0.3s var(--ease-out), transform 0.3s var(--ease-out);
 }
@@ -593,26 +593,19 @@
   border-color: rgba(56, 189, 248, 0.35);
   background: linear-gradient(135deg, rgba(139, 92, 246, 0.12), rgba(56, 189, 248, 0.12));
 }
-
 .reveal {
-  opacity: 0;
-  transform: translateY(34px) scale(0.985);
-  filter: blur(8px);
-  transition: opacity 0.8s var(--ease-smooth), transform 0.8s var(--ease-smooth), filter 0.8s var(--ease-smooth);
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
 }
 
 .reveal.in-view {
   opacity: 1;
-  transform: translateY(0) scale(1);
-  filter: blur(0);
+  transform: none;
+  filter: none;
 }
 
-.contact-info .eyebrow.reveal.in-view { transition-delay: 0ms; }
-.contact-info .contact-heading.reveal.in-view { transition-delay: 90ms; }
-.contact-info .contact-subtext.reveal.in-view { transition-delay: 180ms; }
-.contact-info .contact-details.reveal.in-view { transition-delay: 270ms; }
-.contact-info .social-row.reveal.in-view { transition-delay: 360ms; }
-.contact-form-wrap.reveal.in-view { transition-delay: 180ms; }
+
 
 @media (max-width: 980px) {
   .contact-container {
