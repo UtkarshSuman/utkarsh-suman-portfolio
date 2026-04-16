@@ -1,7 +1,7 @@
 import React from "react";
 import "./About.css";
 import { skills } from "../../../data/portfolioData";
-import BentoLayout from "./Bentolayout";
+import BentoLayout from "./BentoLayout";
 
 
 function About() {
