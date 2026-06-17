@@ -142,3 +142,55 @@ export const techStack = [
   },
 ];
 
+
+export const profile = {
+  initials: "US",
+  name: "Utkarsh Suman",
+  bio: "I build scalable AI systems and production-grade web platforms — RAG pipelines, multi-role dashboards, and full-stack products that ship and scale.",
+};
+
+
+// "icon" must match a key in the iconMap inside Footer.jsx
+export const socialLinks = [
+  { icon: "github", url: "https://github.com/your-username", label: "GitHub" },
+  { icon: "linkedin", url: "https://linkedin.com/in/your-username", label: "LinkedIn" },
+  { icon: "leetcode", url: "https://leetcode.com/your-username", label: "LeetCode" },
+  { icon: "twitter", url: "https://twitter.com/your-username", label: "Twitter / X" },
+  { icon: "email", url: "mailto:utkarshsuman7@gmail.com", label: "Email" },
+];
+
+// Footer columns: each column has a title and a list of links
+export const footerColumns = [
+  {
+    title: "Website",
+    links: [
+      { label: "Home", url: "/" },
+      { label: "Services", url: "/services" },
+      { label: "Blog", url: "/blog" },
+      { label: "About", url: "/about" },
+      { label: "Contact", url: "/contact" },
+    ],
+  },
+  {
+    title: "Portfolio",
+    links: [
+      { label: "Overview", url: "/portfolio" },
+      { label: "All Projects", url: "/portfolio/projects" },
+      { label: "Experience", url: "/portfolio/experience" },
+      { label: "Education", url: "/portfolio/education" },
+    ],
+  },
+  {
+    title: "Connect",
+    links: [
+      { label: "GitHub", url: "https://github.com/your-username" },
+      { label: "LinkedIn", url: "https://linkedin.com/in/your-username" },
+      { label: "LeetCode", url: "https://leetcode.com/your-username" },
+      { label: "Twitter / X", url: "https://twitter.com/your-username" },
+      { label: "Medium", url: "https://medium.com/@your-username" },
+      { label: "Email", url: "mailto:you@example.com" },
+    ],
+  },
+];
+
+export const copyrightText = `© ${new Date().getFullYear()} ${profile.name}. All rights reserved.`;
