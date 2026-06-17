@@ -4,6 +4,7 @@ import "./components/sections/InfoCards/cards.css"
 
 import Navbar from "./components/layout/Navbar/Navbar";
 import Hero from "./components/sections/Hero/Hero";
+import Hero1 from "./components/sections/Hero/Hero1";
 import About from "./components/sections/About/About";
 import Projects from "./components/sections/Projects/Projects";
 import Experience from "./components/sections/Experience/Experience";
@@ -56,7 +57,7 @@ function App() {
     <div className="bg-blob bg-blob-r"></div>
 
     <Navbar activeSection={activeSection} />
-    <Hero />
+    <Hero1 />
     <About />
     <ProjectCards />
          

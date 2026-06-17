@@ -1,0 +1,432 @@
+.hero {
+  padding: 0 48px 0;
+  min-height: calc(100vh - 64px);
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* ── Top bar ── */
+.hero__top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 28px 0 32px;
+}
+
+.hero__greeting {
+  font-size: 14px;
+  color: rgb(255, 255, 255);
+  font-weight: 400;
+  letter-spacing: -0.1px;
+}
+
+.hero__status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 7px 16px;
+  border-radius: 999px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.75);
+  font-weight: 500;
+}
+
+.hero__status-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #22c55e;
+  box-shadow: 0 0 6px #22c55e;
+  border-radius: 50%;
+  flex-shrink: 0;
+  animation: statusPulse 2.4s ease-in-out infinite;
+}
+
+@keyframes statusPulse {
+  0%, 100% { opacity: 1; box-shadow: 0 0 6px #22c55e; }
+  50%       { opacity: 0.65; box-shadow: 0 0 14px #22c55e; }
+}
+
+/* ── Body — single centered column ── */
+.hero__body {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-bottom: 80px;
+}
+
+.hero__left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 1000px;
+  width: 100%;
+}
+
+/* ── Eyebrow ── */
+.hero__eyebrow {
+  display: inline-block;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #00f5ff;
+  margin-bottom: 22px;
+}
+
+/* ── Headline ── */
+.hero__headline {
+  font-size: clamp(56px, 7vw, 82px);
+  line-height: 1.0;
+  letter-spacing: -0.035em;
+  margin: 0 0 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.hero__headline-line {
+  display: block;
+}
+
+/* "Building" — solid white */
+.hero__headline--solid {
+  font-weight: 800;
+  color: #ffffff;
+}
+
+/* "software 🪪 that" — solid white, inline avatar */
+.hero__headline--inline {
+  justify-content: center;
+  font-weight: 800;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: nowrap;
+  background: linear-gradient(
+    135deg,
+    #00f5d4,
+    #00bbf9,
+    #9b5de5,
+    #f15bb5
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* "feels alive." — white fill + black stroke border */
+.hero__headline--filled {
+  font-weight: 800;
+  color: #ffffff;
+  /* black border painted via text-shadow on all sides */
+  text-shadow:
+    -2px -2px 0 #000,
+     2px -2px 0 #000,
+    -2px  2px 0 #000,
+     2px  2px 0 #000,
+    /* extra half-pixel diagonals for smooth corners */
+    -1px -2px 0 #000,
+     1px -2px 0 #000,
+    -2px -1px 0 #000,
+     2px -1px 0 #000,
+    -2px  1px 0 #000,
+     2px  1px 0 #000,
+    -1px  2px 0 #000,
+     1px  2px 0 #000;
+}
+
+/* ── Inline avatar ── */
+.hero__avatar-inline {
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+
+.hero__avatar-img {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.08);
+  margin-top: -4px;
+}
+
+/* ── Bio ── */
+.hero__bio {
+  font-size: 22px;
+  line-height: 1.45;
+  max-width: 700px;
+  text-align: center;
+
+  color: rgba(255,255,255,0.72);
+
+  margin: 0 auto 40px;
+  padding-left: 0;
+  border-left: none;
+}
+
+/* ── Actions ── */
+.hero__actions {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+.hero__btn-primary,
+.hero__btn-ghost {
+  min-width: 220px;
+  height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 14px;
+  text-decoration: none;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  transition: all 0.3s ease;
+}
+
+.hero__btn-primary {
+  color: white;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.18);
+  backdrop-filter: blur(10px);
+}
+
+.hero__btn-primary:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255,255,255,0.35);
+}
+
+.hero__btn-ghost {
+  color: white;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.12);
+  backdrop-filter: blur(10px);
+}
+
+.hero__btn-ghost:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255,255,255,0.25);
+}
+
+.hero__arrow {
+  transition: transform 0.2s ease;
+}
+
+.hero__btn-ghost:hover .hero__arrow {
+  transform: translateX(4px);
+}
+
+/* ── Social bar ── */
+.hero__social-bar {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 28px 0 32px;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  margin-top: auto;
+}
+
+.hero__social-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.25);
+  margin-right: 8px;
+}
+
+.hero__social-link {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  text-decoration: none;
+  font-size: 13.5px;
+  color: rgba(255, 255, 255, 0.4);
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.hero__social-link:hover {
+  color: #ffffff;
+}
+
+#rotatingBadge,
+.hero__left > div:first-child {
+  margin-bottom: 24px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .hero {
+    padding: 0 24px;
+  }
+
+  .hero__headline {
+    font-size: clamp(44px, 10vw, 64px);
+  }
+}
+
+@media (max-width: 600px) {
+  .hero__social-bar {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .hero__headline--inline {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero__headline {
+    font-size: clamp(42px, 10vw, 70px);
+  }
+
+  .hero__bio {
+    font-size: 17.5px;
+    max-width: 90%;
+  }
+
+  .hero__actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero__btn-primary,
+  .hero__btn-ghost {
+    width: 100%;
+    max-width: 320px;
+  }
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, #09090b 0%, #0f1117 52%, #08090d 100%);
+}
+
+.hero__top-bar {
+  padding-top: 26px;
+}
+
+.hero__status {
+  background: rgba(255, 255, 255, 0.075);
+  border-color: rgba(255, 255, 255, 0.14);
+  color: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.22);
+}
+
+.hero__greeting {
+  color: rgba(255, 255, 255, 0.76);
+  font-size: 60px;
+  margin-bottom: 4px;
+}
+
+.hero__name {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.hero__headline {
+  max-width: 980px;
+  gap: 2px;
+  margin-bottom: 34px;
+  letter-spacing: -0.045em;
+}
+
+.hero__headline--solid {
+  color: #f7f7fb;
+  text-shadow: 0 18px 60px rgba(255, 255, 255, 0.08);
+}
+
+.hero__headline--inline {
+  background: linear-gradient(90deg, #7dd3fc 0%, #a78bfa 42%, #f0abfc 72%, #ffffff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.hero__headline--filled {
+  color: #ffffff;
+  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.22);
+  text-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.15),
+    0 22px 70px rgba(167, 139, 250, 0.18);
+}
+
+.hero__avatar-img {
+  width: 68px;
+  height: 68px;
+  border: 3px solid rgba(255, 255, 255, 0.28);
+  box-shadow:
+    0 0 0 7px rgba(255, 255, 255, 0.06),
+    0 18px 40px rgba(0, 0, 0, 0.35);
+}
+
+.hero__actions {
+  gap: 18px;
+}
+
+.hero__btn-primary,
+.hero__btn-ghost {
+  border-radius: 999px;
+  height: 56px;
+  min-width: 210px;
+  letter-spacing: -0.01em;
+}
+
+.hero__btn-primary {
+  color: #09090b;
+  background: #ffffff;
+  border-color: #ffffff;
+  box-shadow: 0 18px 48px rgba(255, 255, 255, 0.12);
+}
+
+.hero__btn-primary:hover {
+  transform: translateY(-2px);
+  background: #f4f4f5;
+  border-color: #f4f4f5;
+  box-shadow: 0 22px 58px rgba(255, 255, 255, 0.17);
+}
+
+.hero__btn-ghost {
+  color: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.065);
+  border-color: rgba(255, 255, 255, 0.16);
+}
+
+.hero__btn-ghost:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.095);
+  border-color: rgba(255, 255, 255, 0.28);
+}
+
+@media (max-width: 600px) {
+  .hero__headline {
+    gap: 6px;
+    letter-spacing: -0.035em;
+  }
+
+  .hero__avatar-img {
+    width: 52px;
+    height: 52px;
+  }
+
+  .hero__actions {
+    gap: 12px;
+  }
+}
