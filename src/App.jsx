@@ -8,7 +8,6 @@ import Hero1 from "./components/sections/Hero/Hero1";
 import About from "./components/sections/About/About";
 import Projects from "./components/sections/Projects/Projects";
 import Experience from "./components/sections/Experience/Experience";
-import { codingProfiles } from "./data/portfoliodata";
 import Contact from "./components/sections/Contact/Contact";
 import Footer from "./components/layout/Footer/Footer";
 
