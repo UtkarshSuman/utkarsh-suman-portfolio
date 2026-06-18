@@ -1,14 +1,8 @@
 import React from "react";
 import AboutMe from "./Aboutme";
-<<<<<<< HEAD
 import TechStack from "./TechStack";
-import TimeZone from "./TimeZone";
-import LaunchCTA from "./LaunchCTA";
-=======
-import TechStack from "./Techstack";
 import TimeZone from "./Timezone";
 import LaunchCTA from "./Launchcta";
->>>>>>> 371d910068f5c41a6d78df2ca72820a2f2d0aa09
 import "./Bentolayout.css";
 
 export default function BentoLayout() {
