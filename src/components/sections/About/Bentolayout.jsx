@@ -3,7 +3,7 @@ import AboutMe from "./AboutMe";
 import TechStack from "./TechStack";
 import TimeZone from "./TimeZone";
 import LaunchCTA from "./LaunchCTA";
-import "./BentoLayout.css";
+import "./Bentolayout.css";
 
 export default function BentoLayout() {
   return (
