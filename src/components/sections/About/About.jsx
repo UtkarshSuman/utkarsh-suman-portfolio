@@ -1,6 +1,6 @@
 import React from "react";
 import "./About.css";
-import { skills } from "../../../data/portfolioData";
+import { skills } from "../../../data/portfoliodata";
 import BentoLayout from "./Bentolayout";
 
 

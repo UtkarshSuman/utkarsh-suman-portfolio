@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import "./HeroSection.css";
+import "./Herosection.css";
 import { ArrowRight, Mail } from "lucide-react";
 
 const HeroSection = () => {

@@ -1,5 +1,5 @@
 import React from "react";
-import { profile,socialLinks,footerColumns,copyrightText } from "../../../data/portfolioData";
+import { profile,socialLinks,footerColumns,copyrightText } from "../../../data/portfoliodata";
 import "./Footer.css";
 
 const iconMap = {

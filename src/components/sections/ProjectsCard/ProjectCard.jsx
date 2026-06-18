@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import "./ProjectCard.css";
+import "./Projectcard.css";
 import projects from "./projectdata.js";
 
 function ArrowRight() {

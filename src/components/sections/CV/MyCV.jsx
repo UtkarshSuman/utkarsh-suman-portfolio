@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./MyCV.css";
+import "./Mycv.css";
 
 /* ── Config — edit these to match your details ────────────
    Replace CV_FILE_PATH with the actual path to your CV PDF,

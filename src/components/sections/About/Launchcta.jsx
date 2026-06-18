@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import "./LaunchCTA.css";
+import "./Launchcta.css";
 
 export default function LaunchCTA() {
   const cardRef = useRef(null);

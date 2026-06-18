@@ -2,7 +2,7 @@ import React, {
   useEffect, useRef, useState, useCallback
 } from "react";
 import codingProfilesData from "./Codingprofilesdata";
-import "./CodingProfiles.css";
+import "./Codingprofiles.css";
 
 function SplitCard({ profile, index }) {
   const [sliderPct, setSliderPct] = useState(28); // start showing mostly screenshot

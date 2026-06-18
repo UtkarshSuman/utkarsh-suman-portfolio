@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import "./TimeZone.css";
+import "./Timezone.css";
 
 export default function TimeZone() {
   const [time, setTime] = useState("");

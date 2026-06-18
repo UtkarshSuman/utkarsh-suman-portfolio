@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import "./TechStack.css";
+import "./Techstack.css";
 
 const techs = ["React", "Javascript", "PostgreSQL", "Express", "Node.js"];
 

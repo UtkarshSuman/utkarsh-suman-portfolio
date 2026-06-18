@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./index.css";
-import "./components/sections/InfoCards/cards.css"
+
 
 import Navbar from "./components/layout/Navbar/Navbar";
 import Hero from "./components/sections/Hero/Hero";
@@ -11,7 +11,7 @@ import Experience from "./components/sections/Experience/Experience";
 import { codingProfiles } from "./data/portfolioData";
 import Contact from "./components/sections/Contact/Contact";
 import Footer from "./components/layout/Footer/Footer";
-import "./components/sections/InfoCards/cards.css"
+
 import ProjectCards from "./components/sections/ProjectsCard/ProjectCard";
 import CodingProfiles from "./components/sections/CodingProfiles/CodingProfile";
 import WorkExperience from "./components/sections/Experience/Workexperience";

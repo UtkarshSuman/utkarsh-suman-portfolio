@@ -1,4 +1,4 @@
-import "./TechStackCard.css";
+import "./Techstackcard.css";
 import { techStack } from "../../../data/portfolioData";
 
 /* ── Single tech row with animated progress bar ─────────── */

@@ -1,5 +1,5 @@
 import React from "react";
-import AboutMe from "./AboutMe";
+import AboutMe from "./Aboutme";
 import TechStack from "./TechStack";
 import TimeZone from "./TimeZone";
 import LaunchCTA from "./LaunchCTA";
