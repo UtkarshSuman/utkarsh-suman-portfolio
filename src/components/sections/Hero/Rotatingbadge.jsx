@@ -4,7 +4,6 @@ const texts = [
   "Open Source Contributor",
   "Full-Stack Developer",
   "Problem Solver",
-  "UI Perfectionist",
   "Always Building",
 ];
 
