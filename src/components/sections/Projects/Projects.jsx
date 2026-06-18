@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import "./Projects.css";
-import { projects2 } from "../../../data/portfolioData";
+import { projects2 } from "../../../data/portfoliodata";
 
 /* ── Single Card ─────────────────────────────────────────── */
 function ProjectCard({
