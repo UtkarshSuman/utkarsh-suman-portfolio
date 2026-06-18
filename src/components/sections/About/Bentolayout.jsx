@@ -1,8 +1,8 @@
 import React from "react";
-import AboutMe from "./AboutMe";
-import TechStack from "./TechStack";
-import TimeZone from "./TimeZone";
-import LaunchCTA from "./LaunchCTA";
+import AboutMe from "./Aboutme";
+import TechStack from "./Techstack";
+import TimeZone from "./Timezone";
+import LaunchCTA from "./Launchcta";
 import "./Bentolayout.css";
 
 export default function BentoLayout() {
