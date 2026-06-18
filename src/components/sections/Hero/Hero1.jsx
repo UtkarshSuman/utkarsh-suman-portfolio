@@ -2,7 +2,7 @@ import './Hero1.css';
 import RotatingBadge from './Rotatingbadge';
 
 // Placeholder avatar — swap for real image src
-const AVATAR_SRC = './public/images/myimg1.jpeg';
+const AVATAR_SRC = '/images/myimg1.jpeg';
 
 export default function Hero() {
   return (
