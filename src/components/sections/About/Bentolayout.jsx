@@ -1,6 +1,6 @@
 import React from "react";
 import AboutMe from "./Aboutme";
-import TechStack from "./TechStack";
+import TechStack from "./Techstack";
 import TimeZone from "./Timezone";
 import LaunchCTA from "./Launchcta";
 import "./Bentolayout.css";
