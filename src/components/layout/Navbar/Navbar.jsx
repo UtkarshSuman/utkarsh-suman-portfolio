@@ -3,10 +3,12 @@ import { motion, AnimatePresence } from "framer-motion";
 import "./Navbar.css";
 
 function Navbar({ activeSection }) {
-  const [scrolled, setScrolled]   = useState(false);
-  const [menuOpen, setMenuOpen]   = useState(false);
-  const [theme, setTheme]         = useState(() => localStorage.getItem("theme") || "dark");
-  const innerRef                  = useRef(null);
+  const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [theme, setTheme] = useState(
+    () => localStorage.getItem("theme") || "dark",
+  );
+  const innerRef = useRef(null);
   const [dropdownStyle, setDropdownStyle] = useState({});
 
   /* ── Apply theme to <html> so CSS vars cascade everywhere ── */
@@ -23,13 +25,19 @@ function Navbar({ activeSection }) {
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
-    return () => { document.body.style.overflow = ""; };
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, [menuOpen]);
 
   useEffect(() => {
     if (menuOpen && innerRef.current) {
       const rect = innerRef.current.getBoundingClientRect();
-      setDropdownStyle({ top: rect.bottom + 6, left: rect.left, width: rect.width });
+      setDropdownStyle({
+        top: rect.bottom + 6,
+        left: rect.left,
+        width: rect.width,
+      });
     }
   }, [menuOpen]);
 
@@ -38,9 +46,12 @@ function Navbar({ activeSection }) {
     const handle = (e) => {
       const dropdown = document.querySelector(".mobile-menu");
       if (
-        innerRef.current && !innerRef.current.contains(e.target) &&
-        dropdown && !dropdown.contains(e.target)
-      ) setMenuOpen(false);
+        innerRef.current &&
+        !innerRef.current.contains(e.target) &&
+        dropdown &&
+        !dropdown.contains(e.target)
+      )
+        setMenuOpen(false);
     };
     document.addEventListener("mousedown", handle);
     return () => document.removeEventListener("mousedown", handle);
@@ -48,7 +59,10 @@ function Navbar({ activeSection }) {
 
   const scrollTo = (id) => {
     const el = document.getElementById(id);
-    if (el) { el.scrollIntoView({ behavior: "smooth" }); setMenuOpen(false); }
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+      setMenuOpen(false);
+    }
   };
 
   const toggleTheme = () => setTheme((t) => (t === "dark" ? "light" : "dark"));
@@ -56,13 +70,27 @@ function Navbar({ activeSection }) {
   const sections = ["about", "projects", "experience", "coding", "contact"];
 
   const menuVariants = {
-    closed: { opacity: 0, scaleY: 0.96, y: -4, transition: { duration: 0.2, ease: [0.4, 0, 0.2, 1] } },
-    open:   { opacity: 1, scaleY: 1,    y: 0,  transition: { duration: 0.26, ease: [0.4, 0, 0.2, 1] } },
+    closed: {
+      opacity: 0,
+      scaleY: 0.96,
+      y: -4,
+      transition: { duration: 0.2, ease: [0.4, 0, 0.2, 1] },
+    },
+    open: {
+      opacity: 1,
+      scaleY: 1,
+      y: 0,
+      transition: { duration: 0.26, ease: [0.4, 0, 0.2, 1] },
+    },
   };
 
   const itemVariants = {
     closed: { opacity: 0, x: -10 },
-    open: (i) => ({ opacity: 1, x: 0, transition: { delay: 0.06 + i * 0.055, duration: 0.18 } }),
+    open: (i) => ({
+      opacity: 1,
+      x: 0,
+      transition: { delay: 0.06 + i * 0.055, duration: 0.18 },
+    }),
   };
 
   const isDark = theme === "dark";
@@ -77,11 +105,22 @@ function Navbar({ activeSection }) {
         className={`navbar ${scrolled ? "navbar-scrolled" : ""}`}
       >
         <div className="navbar-inner" ref={innerRef}>
-
-          {/* Brand */}
-          <div className="navbar-brand" onClick={() => scrollTo("about")}>
-            <div className="logo-icon">US</div>
-            <span className="logo-name">Utkarsh</span>
+          <div className="navbar-brand">
+            <div
+              className="navbar-brand-main"
+              onClick={() => scrollTo("about")}
+            >
+              <div className="logo-icon">US</div>
+              <span className="logo-name">Utkarsh Suman</span>
+            </div>
+            <div className="brand-divider" />
+            <button
+              className="brand-call-btn"
+              onClick={() => scrollTo("contact")}
+            >
+              Contact Me
+              <span className="call-arrow">↗</span>
+            </button>
           </div>
 
           {/* Desktop nav links */}
@@ -95,7 +134,10 @@ function Navbar({ activeSection }) {
                   {item.toUpperCase()}
                 </button>
                 {activeSection === item && (
-                  <motion.div layoutId="activeIndicator" className="active-indicator" />
+                  <motion.div
+                    layoutId="activeIndicator"
+                    className="active-indicator"
+                  />
                 )}
               </div>
             ))}
@@ -108,12 +150,16 @@ function Navbar({ activeSection }) {
               Open to work
             </div>
 
-            <a href="/cv.pdf" download className="nav-cv-btn">
+            {/* <a href="/cv.pdf" download className="nav-cv-btn">
               Download CV
-            </a>
+            </a> */}
 
             {/* Theme toggle — desktop */}
-            <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle theme">
+            <button
+              className="theme-toggle"
+              onClick={toggleTheme}
+              aria-label="Toggle theme"
+            >
               {isDark ? <SunIcon /> : <MoonIcon />}
             </button>
           </div>
@@ -124,7 +170,9 @@ function Navbar({ activeSection }) {
             onClick={() => setMenuOpen((v) => !v)}
             aria-label="Toggle menu"
           >
-            <span /><span /><span />
+            <span />
+            <span />
+            <span />
           </div>
         </div>
       </motion.nav>
@@ -135,15 +183,26 @@ function Navbar({ activeSection }) {
           <>
             <motion.div
               className="menu-backdrop"
-              initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
               onClick={() => setMenuOpen(false)}
             />
 
             <motion.div
               className="mobile-menu"
-              style={{ position: "fixed", top: dropdownStyle.top, left: dropdownStyle.left, width: dropdownStyle.width, transformOrigin: "top center" }}
-              variants={menuVariants} initial="closed" animate="open" exit="closed"
+              style={{
+                position: "fixed",
+                top: dropdownStyle.top,
+                left: dropdownStyle.left,
+                width: dropdownStyle.width,
+                transformOrigin: "top center",
+              }}
+              variants={menuVariants}
+              initial="closed"
+              animate="open"
+              exit="closed"
             >
               {/* Top row: status + CV + theme toggle */}
               <div className="mm-top-row">
@@ -152,9 +211,15 @@ function Navbar({ activeSection }) {
                   Open to work
                 </div>
                 <div className="mm-top-right">
-                  <a href="/cv.pdf" download className="mm-cv-btn">Download CV</a>
+                  <a href="/cv.pdf" download className="mm-cv-btn">
+                    Download CV
+                  </a>
                   {/* Theme toggle — mobile */}
-                  <button className="theme-toggle theme-toggle--sm" onClick={toggleTheme} aria-label="Toggle theme">
+                  <button
+                    className="theme-toggle theme-toggle--sm"
+                    onClick={toggleTheme}
+                    aria-label="Toggle theme"
+                  >
                     {isDark ? <SunIcon /> : <MoonIcon />}
                   </button>
                 </div>
@@ -165,7 +230,11 @@ function Navbar({ activeSection }) {
               <nav className="mm-links">
                 {sections.map((item, i) => (
                   <motion.button
-                    key={item} custom={i} variants={itemVariants} initial="closed" animate="open"
+                    key={item}
+                    custom={i}
+                    variants={itemVariants}
+                    initial="closed"
+                    animate="open"
                     onClick={() => scrollTo(item)}
                     className={`mm-link ${activeSection === item ? "active" : ""}`}
                   >
@@ -174,11 +243,21 @@ function Navbar({ activeSection }) {
                 ))}
               </nav>
 
-              <motion.div className="mm-cta"
+              <motion.div
+                className="mm-cta"
                 initial={{ opacity: 0, y: 8 }}
-                animate={{ opacity: 1, y: 0, transition: { delay: 0.36, duration: 0.2 } }}
+                animate={{
+                  opacity: 1,
+                  y: 0,
+                  transition: { delay: 0.36, duration: 0.2 },
+                }}
               >
-                {/* <button className="book-call-btn">Book a Call</button> */}
+                <button
+                  className="mobile-book-call-btn"
+                  onClick={() => scrollTo("contact")}
+                >
+                  Contact Me
+                </button>
               </motion.div>
             </motion.div>
           </>
@@ -191,24 +270,42 @@ function Navbar({ activeSection }) {
 /* ── Icon components ── */
 function SunIcon() {
   return (
-    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <circle cx="12" cy="12" r="5"/>
-      <line x1="12" y1="1"  x2="12" y2="3"/>
-      <line x1="12" y1="21" x2="12" y2="23"/>
-      <line x1="4.22" y1="4.22"   x2="5.64" y2="5.64"/>
-      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
-      <line x1="1"  y1="12" x2="3"  y2="12"/>
-      <line x1="21" y1="12" x2="23" y2="12"/>
-      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
-      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+    <svg
+      width="17"
+      height="17"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <circle cx="12" cy="12" r="5" />
+      <line x1="12" y1="1" x2="12" y2="3" />
+      <line x1="12" y1="21" x2="12" y2="23" />
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+      <line x1="1" y1="12" x2="3" y2="12" />
+      <line x1="21" y1="12" x2="23" y2="12" />
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
     </svg>
   );
 }
 
 function MoonIcon() {
   return (
-    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+    <svg
+      width="17"
+      height="17"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
     </svg>
   );
 }

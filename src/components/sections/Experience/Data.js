@@ -5,6 +5,23 @@
 export const experiences = [
   {
     id: 1,
+    company: "GirlScript Summer of Code",
+    role: "Open Source Contributor",
+    logo: "/images/gssoc.jpg",
+    initials: "GSSoC",
+    color: "#d36e34",
+    bg: "rgba(211, 161, 52, 0.1)",
+    accentBorder: "rgba(211, 161, 52, 0.43)",
+    startDate: "June 2026",
+    endDate: "July 2026",
+    duration: "2 months",
+    current: false,
+    description:
+      "Contributed to open-source projects through GirlScript Summer of Code by collaborating with maintainers, fixing issues, implementing new features, and improving project documentation.",
+    tags: ["Open Source", "GitHub", "Git",],
+  },
+  {
+    id: 2,
     company: "eDC IIT DELHI",
     role: "Campus Ambassador",
     logo: "/images/edc.jpg",
@@ -21,7 +38,7 @@ export const experiences = [
     tags: ["Leadership", "Collaboration", "Team Work",],
   },
   {
-    id: 2,
+    id: 3,
     company: "Leetcode",
     role: "Problem Solver",
     logo: "/images/leetcodepic.jpg",

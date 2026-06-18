@@ -39,12 +39,12 @@ export default function AboutMe() {
         {/* Stats row */}
         <div className="about-stats">
           <div className="stat">
-            <span className="stat-number">5+</span>
+            <span className="stat-number">1+</span>
             <span className="stat-label">YEARS EXP.</span>
           </div>
           <div className="stat-divider" />
           <div className="stat">
-            <span className="stat-number">40+</span>
+            <span className="stat-number">8+</span>
             <span className="stat-label">PROJECTS</span>
           </div>
         </div>

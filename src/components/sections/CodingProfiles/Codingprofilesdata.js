@@ -6,7 +6,7 @@ const codingProfilesData = {
     {
       id: "leetcode",
       platform: "LeetCode",
-      description: "Solved over 167 questions with a streak of 149 days.",
+      description: "Solved over 189 questions with a streak of 150 days.",
       link: "https://leetcode.com/u/UtkarshSuman/",
       btnText: "Visit LeetCode",
       logoUrl: "/images/leetcodeprior.png",

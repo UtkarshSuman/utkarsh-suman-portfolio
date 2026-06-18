@@ -66,15 +66,42 @@ function SocialIcon({ icon, url, label }) {
 }
 
 function FooterColumn({ title, links }) {
+  const scrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+
+    if (section) {
+      section.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
+
   return (
     <div className="footer-column">
       <h3 className="footer-column-title">{title}</h3>
+
       <ul className="footer-column-list">
         {links.map((link) => (
           <li key={link.label}>
-            <a href={link.url} className="footer-link">
-              {link.label}
-            </a>
+            {link.target ? (
+              <button
+                type="button"
+                className="footer-link footer-link-button"
+                onClick={() => scrollToSection(link.target)}
+              >
+                {link.label}
+              </button>
+            ) : (
+              <a
+                href={link.url}
+                className="footer-link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {link.label}
+              </a>
+            )}
           </li>
         ))}
       </ul>
