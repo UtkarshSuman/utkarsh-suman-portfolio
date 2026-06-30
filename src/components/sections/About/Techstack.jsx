@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import "./Techstack.css";
 
-const techs = ["React", "Javascript", "PostgreSQL", "Express", "Node.js"];
+const techs = ["React", "JavaScript","TypeScript","PostgreSQL", "Express", "Node.js"];
 
 export default function TechStack() {
   const cardRef = useRef(null);

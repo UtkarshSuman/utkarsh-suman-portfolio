@@ -2,7 +2,7 @@
 
 .about-section {
   width: 100%;
-  padding: 16px;
+  padding: 0px;
   box-sizing: border-box;
   opacity: 0; 
 }
@@ -16,7 +16,7 @@
 .about-card {
   background: #111827;
   border: 1px solid rgba(255, 255, 255, 0.07);
-  border-radius: 20px;
+  border-radius: 16px;
   padding: 28px 24px 0;
   overflow: hidden;
   position: relative;
@@ -53,7 +53,7 @@
   color: #ffffff;
   line-height: 1.2;
   margin: 0 0 16px;
-  letter-spacing: -0.3px;
+  letter-spacing: 0px;
 }
 
 /* ── Body ── */
@@ -130,16 +130,16 @@
 /* ================= DESKTOP ================= */
 @media (min-width: 1024px) {
   .about-section {
-    padding: 24px;
+    padding: 0;
   }
 
   .about-card {
     display: grid;
-    grid-template-columns: 1fr 380px;
+    grid-template-columns:minmax(0,1fr) minmax(300px,360px);
     grid-template-rows: auto auto auto auto;
     column-gap: 40px;
     padding: 40px 40px 0;
-    border-radius: 28px;
+    border-radius: 24px;
     min-height: 460px;
   }
 
@@ -190,7 +190,7 @@
     margin: 0 -40px 0 0;
     height: auto;
     align-self: stretch;
-    border-radius: 0 28px 28px 0;
+    border-radius: 0 24px 24px 0;
     overflow: hidden;
   }
 
@@ -200,6 +200,6 @@
 
   .about-image {
     height: 100%;
-    border-radius: 0 28px 28px 0;
+    border-radius: 0 24px 24px 0;
   }
 }

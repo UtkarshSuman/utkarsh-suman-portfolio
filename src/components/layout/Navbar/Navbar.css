@@ -107,10 +107,10 @@ body { margin: 0; padding: 0; }
 }
 
 .navbar-inner {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   height: 66px;
   align-items: center;
-  justify-content: space-between;
   gap: 24px;
   width: 100%;
   padding: 11px 24px;
@@ -131,6 +131,7 @@ body { margin: 0; padding: 0; }
    BRAND
    ===================================================== */
 .navbar-brand {
+  grid-column: 1;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -167,12 +168,13 @@ body { margin: 0; padding: 0; }
    DESKTOP NAV LINKS
    ===================================================== */
 .nav-links {
+  grid-column: 2;
   display: flex;
   align-items: center;
   gap: 4px;
   flex: 1;
   justify-content: center;
-  padding-right: 275px;
+  padding-right: 0;
 }
 
 .nav-item {
@@ -233,6 +235,8 @@ body { margin: 0; padding: 0; }
    DESKTOP RIGHT ACTIONS
    ===================================================== */
 .nav-actions {
+  grid-column: 3;
+  justify-self: end;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -331,6 +335,8 @@ body { margin: 0; padding: 0; }
    HAMBURGER
    ===================================================== */
 .hamburger {
+  grid-column: 3;
+  justify-self: end;
   display: none;
   flex-direction: column;
   justify-content: center;
@@ -684,4 +690,12 @@ body { margin: 0; padding: 0; }
   .mm-status-badge { font-size: 11.5px; padding: 5px 10px; }
   .mm-cv-btn { font-size: 11.5px; padding: 5px 10px; }
   .mm-link { font-size: 14px; padding: 11px 12px; }
+}
+
+@media (min-width:1024px) and (max-width:1440px){
+
+  .navbar-brand{
+      margin-right:-129px;
+  }
+
 }

@@ -8,6 +8,11 @@ export default function Hero() {
   return (
     <section id="hero" className="hero">
 
+      {/* Background */}
+      <div className="pc-bg-dots" />
+      <div className="pc-blob pc-blob-l" />
+      <div className="pc-blob pc-blob-r" />
+
       <div className="hero__body">
         <div className="hero__left">
           <RotatingBadge id="rotatingBadge"/>
@@ -33,7 +38,7 @@ export default function Hero() {
 
           <div className="hero__actions">
             <a href="#projects" className="hero__btn-primary">See my projects</a>
-            <a href="./public/pdf/Resume.pdf"
+            <a href="/pdf/Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="hero__btn-ghost">

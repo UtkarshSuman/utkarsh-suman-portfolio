@@ -1,10 +1,4 @@
-/* ═══════════════════════════════════════════════
-   WorkExperience.css
-   All styles for the WorkExperience timeline.
-   Dynamic per-company colors (accent, bg, border)
-   are applied via CSS custom properties set inline
-   on each card/dot — see WorkExperience.jsx.
-═══════════════════════════════════════════════ */
+
 
 @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap');
 
@@ -16,6 +10,118 @@
   margin: 0;
   padding: 0;
 }
+
+/* ======================================================
+   LIGHT THEME (Default)
+====================================================== */
+
+:root,
+[data-theme="light"] {
+
+  /* Text */
+  --wex-heading: #111827;
+  --wex-subheading: #6b7280;
+  --wex-company: #0f172a;
+  --wex-description: #475569;
+  --wex-date-duration: #64748b;
+
+  /* Cards */
+  --wex-card-bg: rgba(255,255,255,0.88);
+  --wex-card-hover: rgba(255,255,255,0.96);
+  --wex-card-border: rgba(15,23,42,0.08);
+  --wex-card-shadow: 0 12px 30px rgba(15,23,42,0.08);
+
+  /* Card overlays */
+  --wex-card-overlay: linear-gradient(
+    180deg,
+    rgba(255,255,255,.96),
+    rgba(248,250,252,.92)
+  );
+
+  --wex-card-highlight: linear-gradient(
+    135deg,
+    rgba(255,255,255,.35),
+    transparent 60%
+  );
+
+  /* Timeline */
+  --wex-line-base: #dbe2ea;
+  --wex-line-fill: linear-gradient(to bottom,#6366f1,#a855f7);
+  --wex-line-glow: 0 0 12px rgba(139,92,246,.45);
+
+  /* Timeline Dot */
+  --wex-dot-bg: #ffffff;
+  --wex-dot-border: #d5dce5;
+
+  /* Background dots */
+  --wex-grid: rgba(100,116,139,.12);
+
+  /* Logo shadow */
+  --wex-logo-shadow: 0 10px 24px rgba(15,23,42,.08);
+
+  /* Current badge */
+  --wex-current-bg: #ecfdf5;
+  --wex-current-border: #bbf7d0;
+  --wex-current-text: #059669;
+
+}
+
+
+/* ======================================================
+   DARK THEME
+====================================================== */
+
+[data-theme="dark"] {
+
+  /* Text */
+  --wex-heading: #f3f4f6;
+  --wex-subheading: #9ca3af;
+  --wex-company: #f3f4f6;
+  --wex-description: #c0c7d4;
+  --wex-date-duration: #6b7280;
+
+  /* Cards */
+  --wex-card-bg: rgba(255,255,255,.03);
+  --wex-card-hover: rgba(255,255,255,.055);
+  --wex-card-border: rgba(255,255,255,.08);
+  --wex-card-shadow: 0 18px 40px rgba(0,0,0,.32);
+
+  /* Card overlays */
+  --wex-card-overlay: linear-gradient(
+    180deg,
+    rgba(10,10,15,.08),
+    rgba(10,10,15,.22)
+  );
+
+  --wex-card-highlight: linear-gradient(
+    135deg,
+    rgba(255,255,255,.14),
+    rgba(255,255,255,.04) 28%,
+    transparent 55%
+  );
+
+  /* Timeline */
+  --wex-line-base: rgba(255,255,255,.08);
+  --wex-line-fill: linear-gradient(to bottom,#6366f1,#a855f7);
+  --wex-line-glow: 0 0 12px rgba(139,92,246,.75);
+
+  /* Timeline Dot */
+  --wex-dot-bg: #0a0a0f;
+  --wex-dot-border: rgba(255,255,255,.14);
+
+  /* Background dots */
+  --wex-grid: rgba(255,255,255,.03);
+
+  /* Logo shadow */
+  --wex-logo-shadow: 0 12px 28px rgba(0,0,0,.35);
+
+  /* Current badge */
+  --wex-current-bg: rgba(52,211,153,.12);
+  --wex-current-border: rgba(52,211,153,.28);
+  --wex-current-text: #6ee7b7;
+
+}
+
 
 /* ══════════════════════════════════════
    ROOT SECTION
@@ -102,7 +208,7 @@
   font-family: 'Syne', sans-serif;
   font-size: clamp(32px, 5vw, 52px);
   font-weight: 800;
-  color: #f0f0f5;
+  color: var(--wex-heading);
   line-height: 1.1;
   letter-spacing: -1.5px;
   margin: 0;
@@ -118,7 +224,7 @@
 .wex-subheading {
   margin-top: 16px;
   font-size: 15px;
-  color: #6b7280;
+  color: var(--wex-subheading);
   font-weight: 300;
   letter-spacing: 0.2px;
 }
@@ -151,7 +257,7 @@
 .wex-line-base {
   position: absolute;
   inset: 0;
-  background: rgba(255, 255, 255, 0.06);
+  background: var(--wex-line-base);
   border-radius: 2px;
 }
 
@@ -161,9 +267,9 @@
   top: 0;
   left: 0;
   right: 0;
-  background: linear-gradient(to bottom, #6366f1, #a855f7);
+  background: var(--wex-line-fill);
+  box-shadow: var(--wex-line-glow);
   border-radius: 2px;
-  box-shadow: 0 0 10px rgba(139, 92, 246, 0.7);
   /* height set inline by JS */
 }
 
@@ -268,7 +374,7 @@
 
 .wex-date-dur {
   font-size: 11px;
-  color: #4b5563;
+  color: var(--wex-date-duration);
   font-weight: 300;
   letter-spacing: 0.5px;
 }
@@ -288,14 +394,11 @@
   cursor: default;
   padding: 24px;
   border-radius: 24px;
-  background:
-    linear-gradient(180deg, rgba(255,255,255,0.075) 0%, rgba(255,255,255,0.03) 100%);
-  border: 1px solid rgba(255,255,255,0.08);
+  background: var(--wex-card-bg);
+  border: 1px solid var(--wex-card-border);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  box-shadow:
-    0 18px 40px rgba(0, 0, 0, 0.32),
-    inset 0 1px 0 rgba(255,255,255,0.05);
+  box-shadow: var(--wex-card-shadow);
   transition:
     transform 0.35s ease,
     border-color 0.35s ease,
@@ -330,8 +433,7 @@
 
 .wex-card:hover {
   transform: translateY(-8px);
-  background:
-    linear-gradient(180deg, rgba(255,255,255,0.095) 0%, rgba(255,255,255,0.045) 100%);
+  background: var(--wex-card-hover);
 }
 
 /* Shimmer gradient overlay */
@@ -377,9 +479,7 @@
   justify-content: center;
   flex-shrink: 0;
   overflow: hidden;
-  box-shadow:
-    0 10px 24px rgba(0,0,0,0.28),
-    inset 0 1px 0 rgba(255,255,255,0.08);
+  box-shadow: var(--wex-logo-shadow);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -413,7 +513,7 @@
   font-family: 'Syne', sans-serif;
   font-size: 17px;
   font-weight: 700;
-  color: #f3f4f6;
+  color: var(--wex-company);
   line-height: 1.2;
   letter-spacing: -0.2px;
   white-space: nowrap;
@@ -445,9 +545,9 @@
   text-transform: uppercase;
   white-space: nowrap;
   flex-shrink: 0;
-  color: #6ee7b7;
-  background: rgba(52, 211, 153, 0.12);
-  border: 1px solid rgba(52, 211, 153, 0.28);
+  color: var(--wex-current-text);
+  background: var(--wex-current-bg);
+  border: 1px solid var(--wex-current-border);
   box-shadow: inset 0 1px 0 rgba(255,255,255,0.05);
 }
 
@@ -469,7 +569,7 @@
 /* Description */
 .wex-description {
   font-size: 13.5px;
-  color: #c0c7d4;
+  color: var(--wex-description);
   line-height: 1.8;
   font-weight: 400;
   margin: 0;

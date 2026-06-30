@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Fira+Code:wght@400;500&display=swap');
 
-/* ── Variables ───────────────────────────────────────────────── */
-:root {
+/* ── Theme Variables ─────────────────────────────────────────── */
+:root,
+[data-theme="dark"] {
   --bg-page:        #080a0c;
   --bg-card:        #0d1014;
   --bg-card-hover:  #111518;
@@ -11,6 +12,116 @@
   --text-primary:   #eef2f7;
   --text-secondary: #4a5568;
   --live-green:     #22c55e;
+
+  --pc-dots:        rgba(255, 255, 255, 0.025);
+  --pc-blob-l:      rgba(80, 60, 220, 0.08);
+  --pc-blob-r:      rgba(0, 150, 255, 0.06);
+
+  --pc-img-overlay: linear-gradient(to bottom, rgba(8,10,12,.02) 0%, rgba(8,10,12,.82) 100%);
+  --pc-badge-bg:    rgba(8, 10, 12, 0.78);
+  --pc-badge-border:rgba(255, 255, 255, 0.09);
+  --pc-badge-label: #6b7280;
+
+  --pc-poptext-bg:    rgba(0,0,0,.45);
+  --pc-poptext-border:rgba(255,255,255,.08);
+  --pc-poptext-label: rgba(255,255,255,.55);
+  --pc-poptext-arrow: rgba(255,255,255,.4);
+  --pc-poptext-arrow-border: rgba(255,255,255,.06);
+
+  --pc-card-title-tilt: #fff;
+  --pc-card-desc-tilt:  #5d7090;
+
+  --pc-stack-icon-bg:     #171b20;
+  --pc-stack-icon-border: rgba(255, 255, 255, 0.07);
+  --pc-stack-tooltip-bg:    #1a1f27;
+  --pc-stack-tooltip-border:rgba(255,255,255,.1);
+  --pc-stack-tooltip-text:  var(--text-primary);
+
+  --pc-link-bg:     rgba(255,255,255,.03);
+  --pc-link-border: rgba(255,255,255,.07);
+  --pc-link-text:   var(--text-secondary);
+
+  --pc-link-github-tilt-bg:    rgba(255,255,255,.07);
+  --pc-link-github-tilt-border:rgba(255,255,255,.18);
+  --pc-link-github-tilt-text:  #e2e8f0;
+  --pc-link-github-hover-bg:   rgba(255,255,255,.12);
+
+  --pc-link-live-bg:     rgba(59,130,246,.08);
+  --pc-link-live-border: rgba(59,130,246,.22);
+  --pc-link-live-text:   #60a5fa;
+  --pc-link-live-tilt-bg:    rgba(59,130,246,.18);
+  --pc-link-live-tilt-border:rgba(59,130,246,.45);
+  --pc-link-live-tilt-text:  #93c5fd;
+  --pc-link-live-tilt-shadow: 0 0 18px rgba(59,130,246,.18), inset 0 1px 0 rgba(255,255,255,.06);
+  --pc-link-live-hover-bg:    rgba(59,130,246,.28);
+  --pc-link-live-hover-border:rgba(59,130,246,.6);
+  --pc-link-live-hover-text:  #bfdbfe;
+
+  --pc-card-glow-shadow: 0 28px 56px rgba(0,0,0,.7), 0 8px 20px rgba(0,140,255,.12);
+  --pc-card-tilt-shadow-color: rgba(0,0,0,.75);
+}
+
+[data-theme="light"] {
+  --bg-page:        #ffffff;
+  --bg-card:        #fbfbfd;
+  --bg-card-hover:  #f4f6f9;
+  --border:         rgba(15, 23, 42, 0.08);
+  --border-hover:   rgba(8, 145, 178, 0.35);
+  --accent:         #0891b2;
+  --text-primary:   #0f172a;
+  --text-secondary: #64748b;
+  --live-green:     #16a34a;
+
+  --pc-dots:        rgba(0, 0, 0, 0.04);
+  --pc-blob-l:      rgba(80, 60, 220, 0.06);
+  --pc-blob-r:      rgba(0, 150, 255, 0.05);
+
+  --pc-img-overlay: linear-gradient(to bottom, rgba(15,23,42,.02) 0%, rgba(15,23,42,.78) 100%);
+  --pc-badge-bg:    rgba(255, 255, 255, 0.85);
+  --pc-badge-border:rgba(15, 23, 42, 0.1);
+  --pc-badge-label: #475569;
+
+  --pc-poptext-bg:    rgba(15,23,42,.55);
+  --pc-poptext-border:rgba(255,255,255,.12);
+  --pc-poptext-label: rgba(255,255,255,.85);
+  --pc-poptext-arrow: rgba(255,255,255,.75);
+  --pc-poptext-arrow-border: rgba(255,255,255,.1);
+
+  --pc-card-title-tilt: #0f172a;
+  --pc-card-desc-tilt:  #334155;
+
+  --pc-stack-icon-bg:     #f1f5f9;
+  --pc-stack-icon-border: rgba(15, 23, 42, 0.08);
+  --pc-stack-tooltip-bg:    #ffffff;
+  --pc-stack-tooltip-border:rgba(15,23,42,.12);
+  --pc-stack-tooltip-text:  var(--text-primary);
+
+  --pc-link-bg:     rgba(15,23,42,.03);
+  --pc-link-border: rgba(15,23,42,.1);
+  --pc-link-text:   var(--text-secondary);
+
+  --pc-link-github-tilt-bg:    rgba(15,23,42,.06);
+  --pc-link-github-tilt-border:rgba(15,23,42,.16);
+  --pc-link-github-tilt-text:  #0f172a;
+  --pc-link-github-hover-bg:   rgba(15,23,42,.1);
+
+  --pc-link-live-bg:     rgba(8,145,178,.07);
+  --pc-link-live-border: rgba(8,145,178,.2);
+  --pc-link-live-text:   #0891b2;
+  --pc-link-live-tilt-bg:    rgba(8,145,178,.14);
+  --pc-link-live-tilt-border:rgba(8,145,178,.4);
+  --pc-link-live-tilt-text:  #0e7490;
+  --pc-link-live-tilt-shadow: 0 0 18px rgba(8,145,178,.14), inset 0 1px 0 rgba(255,255,255,.4);
+  --pc-link-live-hover-bg:    rgba(8,145,178,.22);
+  --pc-link-live-hover-border:rgba(8,145,178,.55);
+  --pc-link-live-hover-text:  #0e7490;
+
+  --pc-card-glow-shadow: 0 28px 56px rgba(15,23,42,.18), 0 8px 20px rgba(8,145,178,.1);
+  --pc-card-tilt-shadow-color: rgba(15,23,42,.18);
+}
+
+/* ── Shared (non-color) constants ───────────────────────────── */
+:root {
   --radius-card:    16px;
   --radius-btn:     8px;
   --font-display:   'Syne', sans-serif;
@@ -28,12 +139,13 @@
   padding: 72px 24px 80px;
   position: relative;
   overflow: hidden;
+  transition: background 0.3s ease;
 }
 
 .pc-bg-dots {
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-image: radial-gradient(var(--pc-dots) 1px, transparent 1px);
   background-size: 28px 28px;
   pointer-events: none;
 }
@@ -44,8 +156,8 @@
   pointer-events: none;
   filter: blur(130px);
 }
-.pc-blob-l { width: 520px; height: 520px; top: -140px; left: -160px; background: rgba(80,60,220,0.08); }
-.pc-blob-r { width: 420px; height: 420px; bottom: -120px; right: -120px; background: rgba(0,150,255,0.06); }
+.pc-blob-l { width: 520px; height: 520px; top: -140px; left: -160px; background: var(--pc-blob-l); }
+.pc-blob-r { width: 420px; height: 420px; bottom: -120px; right: -120px; background: var(--pc-blob-r); }
 
 /* ── Header ──────────────────────────────────────────────────── */
 .pc-header { text-align: center; margin-bottom: 56px; position: relative; z-index: 1; }
@@ -142,15 +254,15 @@
 /* 3D image pop-out — rises and scales toward viewer on hover */
 .pc-card.tilted .pc-card__img {
   transform: translateY(-18px) scale(1.08);
-  box-shadow: 0 28px 56px rgba(0,0,0,.7), 0 8px 20px rgba(0,140,255,.12);
+  box-shadow: var(--pc-card-glow-shadow);
 }
 
 .pc-card__img-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, rgba(8,10,12,.02) 0%, rgba(8,10,12,.82) 100%);
+  background: var(--pc-img-overlay);
   pointer-events: none;
-  transition: opacity .35s;
+  transition: opacity .35s, background .3s ease;
 }
 .pc-card.tilted .pc-card__img-overlay { opacity: .7; }
 
@@ -174,23 +286,23 @@
   font-size: 10px;
   letter-spacing: .08em;
   text-transform: uppercase;
-  color: rgba(255,255,255,.55);
-  background: rgba(0,0,0,.45);
+  color: var(--pc-poptext-label);
+  background: var(--pc-poptext-bg);
   padding: 3px 8px;
   border-radius: 5px;
   backdrop-filter: blur(6px);
-  border: 1px solid rgba(255,255,255,.08);
+  border: 1px solid var(--pc-poptext-border);
 }
 
 .pc-img-poptext__arrow {
   font-family: var(--font-mono);
   font-size: 11px;
-  color: rgba(255,255,255,.4);
-  background: rgba(0,0,0,.4);
+  color: var(--pc-poptext-arrow);
+  background: var(--pc-poptext-bg);
   padding: 3px 8px;
   border-radius: 5px;
   backdrop-filter: blur(6px);
-  border: 1px solid rgba(255,255,255,.06);
+  border: 1px solid var(--pc-poptext-arrow-border);
 }
 
 /* ── Live badge ──────────────────────────────────────────────── */
@@ -200,10 +312,11 @@
   display: flex; align-items: center; gap: 5px;
   padding: 5px 11px;
   border-radius: 999px;
-  background: rgba(8,10,12,0.78);
-  border: 1px solid rgba(255,255,255,0.09);
+  background: var(--pc-badge-bg);
+  border: 1px solid var(--pc-badge-border);
   backdrop-filter: blur(10px);
   z-index: 8;
+  transition: background 0.3s ease, border-color 0.3s ease;
 }
 .pc-badge__dot {
   width: 6px; height: 6px; border-radius: 50%;
@@ -211,7 +324,7 @@
   box-shadow: 0 0 8px var(--live-green);
   animation: pc-pulse 2s ease-in-out infinite;
 }
-.pc-badge__label { font-family: var(--font-mono); font-size: 10.5px; color: #6b7280; letter-spacing: .06em; }
+.pc-badge__label { font-family: var(--font-mono); font-size: 10.5px; color: var(--pc-badge-label); letter-spacing: .06em; }
 
 @keyframes pc-pulse {
   0%, 100% { opacity: 1; transform: scale(1); }
@@ -232,7 +345,7 @@
   border-top: 1px solid var(--border);
   transition: border-color .3s;
 }
-.pc-card.tilted .pc-card__body { border-top-color: rgba(0,150,255,.15); }
+.pc-card.tilted .pc-card__body { border-top-color: var(--border-hover); }
 
 .pc-card__title {
   font-family: var(--font-display);
@@ -243,7 +356,7 @@
   display: inline-block;
   transition: color var(--transition), transform .4s cubic-bezier(.34,1.4,.64,1);
 }
-.pc-card.tilted .pc-card__title { color: #fff; transform: translateY(-2px); }
+.pc-card.tilted .pc-card__title { color: var(--pc-card-title-tilt); transform: translateY(-2px); }
 
 .pc-card__desc {
   font-family: var(--font-mono);
@@ -251,10 +364,10 @@
   margin: 0; flex: 1;
   transition: color var(--transition), transform .4s cubic-bezier(.34,1.4,.64,1) .04s;
 }
-.pc-card.tilted .pc-card__desc { color: #5d7090; transform: translateY(-1px); }
+.pc-card.tilted .pc-card__desc { color: var(--pc-card-desc-tilt); transform: translateY(-1px); }
 
 .pc-divider { height: 1px; background: var(--border); margin: 4px 0; transition: background .3s; }
-.pc-card.tilted .pc-divider { background: rgba(0,150,255,.12); }
+.pc-card.tilted .pc-divider { background: var(--border-hover); }
 
 /* ── Footer ──────────────────────────────────────────────────── */
 .pc-card__footer { display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
@@ -263,13 +376,13 @@
 .pc-stack { display: flex; align-items: center; }
 .pc-stack__icon {
   width: 30px; height: 30px; border-radius: 50%;
-  background: #171b20;
-  border: 2px solid rgba(255,255,255,0.07);
+  background: var(--pc-stack-icon-bg);
+  border: 2px solid var(--pc-stack-icon-border);
   display: flex; align-items: center; justify-content: center;
   overflow: visible;
   margin-left: -8px;
   box-shadow: 0 2px 10px rgba(0,0,0,.5);
-  transition: transform .2s ease, box-shadow .2s ease, border-color .2s;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s, background .3s ease;
   position: relative; cursor: default;
 }
 .pc-stack__icon:first-child { margin-left: 0; }
@@ -284,8 +397,8 @@
   content: attr(data-name);
   position: absolute; bottom: calc(100% + 6px); left: 50%;
   transform: translateX(-50%) translateY(4px);
-  background: #1a1f27; border: 1px solid rgba(255,255,255,.1);
-  color: var(--text-primary); font-family: var(--font-mono); font-size: 10px;
+  background: var(--pc-stack-tooltip-bg); border: 1px solid var(--pc-stack-tooltip-border);
+  color: var(--pc-stack-tooltip-text); font-family: var(--font-mono); font-size: 10px;
   white-space: nowrap; padding: 3px 8px; border-radius: 5px;
   opacity: 0; pointer-events: none;
   transition: opacity .18s, transform .18s;
@@ -295,10 +408,11 @@
 
 .pc-stack__overflow {
   font-family: var(--font-mono); font-size: 10px; color: var(--text-secondary);
-  background: #171b20; border: 2px solid rgba(255,255,255,.07);
+  background: var(--pc-stack-icon-bg); border: 2px solid var(--pc-stack-icon-border);
   width: 30px; height: 30px; border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
   margin-left: -8px;
+  transition: background 0.3s ease, border-color 0.3s ease;
 }
 
 /* ── Button row ──────────────────────────────────────────────── */
@@ -307,9 +421,9 @@
 .pc-link {
   display: inline-flex; align-items: center; gap: 5px;
   padding: 7px 12px; border-radius: var(--radius-btn);
-  background: rgba(255,255,255,.03);
-  border: 1px solid rgba(255,255,255,.07);
-  color: var(--text-secondary);
+  background: var(--pc-link-bg);
+  border: 1px solid var(--pc-link-border);
+  color: var(--pc-link-text);
   font-family: var(--font-mono); font-size: 11.5px; font-weight: 500;
   text-decoration: none; letter-spacing: .02em;
   transition: background var(--transition), border-color var(--transition), color var(--transition), box-shadow var(--transition), transform .2s;
@@ -319,25 +433,25 @@
 
 /* GitHub — icon-only */
 .pc-link.github { padding: 7px 10px; }
-.pc-card.tilted .pc-link.github { background: rgba(255,255,255,.07); border-color: rgba(255,255,255,.18); color: #e2e8f0; }
-.pc-link.github:hover { background: rgba(255,255,255,.12) !important; }
+.pc-card.tilted .pc-link.github { background: var(--pc-link-github-tilt-bg); border-color: var(--pc-link-github-tilt-border); color: var(--pc-link-github-tilt-text); }
+.pc-link.github:hover { background: var(--pc-link-github-hover-bg) !important; }
 
-/* Live — blue palette (always visible, deepens on tilt) */
+/* Live — accent palette (always visible, deepens on tilt) */
 .pc-link.live {
-  background: rgba(59,130,246,.08);
-  border-color: rgba(59,130,246,.22);
-  color: #60a5fa;
+  background: var(--pc-link-live-bg);
+  border-color: var(--pc-link-live-border);
+  color: var(--pc-link-live-text);
 }
 .pc-card.tilted .pc-link.live {
-  background: rgba(59,130,246,.18);
-  border-color: rgba(59,130,246,.45);
-  color: #93c5fd;
-  box-shadow: 0 0 18px rgba(59,130,246,.18), inset 0 1px 0 rgba(255,255,255,.06);
+  background: var(--pc-link-live-tilt-bg);
+  border-color: var(--pc-link-live-tilt-border);
+  color: var(--pc-link-live-tilt-text);
+  box-shadow: var(--pc-link-live-tilt-shadow);
 }
 .pc-card.tilted .pc-link.live svg { transform: translateX(3px); }
 .pc-link.live:hover {
-  background: rgba(59,130,246,.28) !important;
-  border-color: rgba(59,130,246,.6) !important;
-  color: #bfdbfe !important;
+  background: var(--pc-link-live-hover-bg) !important;
+  border-color: var(--pc-link-live-hover-border) !important;
+  color: var(--pc-link-live-hover-text) !important;
   transform: translateY(-1px);
 }

@@ -9,14 +9,31 @@ const texts = [
 
 export default function RotatingBadge({ items = texts, interval = 2200 }) {
   const [current, setCurrent] = useState(0);
-  const [state, setState] = useState("active"); // "active" | "exit"
+  const [state, setState] = useState("active");
+  const [darkMode, setDarkMode] = useState(
+    document.documentElement.getAttribute("data-theme") === "dark"
+  );
+
+  // Watch for theme changes
+  useEffect(() => {
+    const observer = new MutationObserver(() => {
+      setDarkMode(
+        document.documentElement.getAttribute("data-theme") === "dark"
+      );
+    });
+
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["data-theme"],
+    });
+
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
     const timer = setInterval(() => {
-      // 1. trigger exit animation
       setState("exit");
 
-      // 2. after exit completes, swap text and enter
       setTimeout(() => {
         setCurrent((prev) => (prev + 1) % items.length);
         setState("active");
@@ -27,12 +44,27 @@ export default function RotatingBadge({ items = texts, interval = 2200 }) {
   }, [items, interval]);
 
   return (
-    <div style={styles.pill}>
+    <div
+      style={{
+        ...styles.pill,
+        background: darkMode
+          ? "rgba(255,255,255,0.06)"
+          : "rgba(255,255,255,0.88)",
+        border: darkMode
+          ? "1px solid rgba(255,255,255,0.10)"
+          : "1px solid rgba(15,23,42,0.08)",
+        boxShadow: darkMode
+          ? "none"
+          : "0 8px 24px rgba(15,23,42,0.08)",
+      }}
+    >
       <span style={styles.dot} />
+
       <span
         key={current}
         style={{
           ...styles.text,
+          color: darkMode ? "rgba(255,255,255,.75)" : "#334155",
           ...(state === "active" ? styles.enter : styles.exitAnim),
         }}
       >
@@ -47,8 +79,6 @@ const styles = {
     display: "inline-flex",
     alignItems: "center",
     gap: "10px",
-    background: "rgba(255,255,255,0.06)",
-    border: "1px solid rgba(255,255,255,0.1)",
     borderRadius: "100px",
     padding: "10px 22px",
     backdropFilter: "blur(12px)",
@@ -56,7 +86,9 @@ const styles = {
     minWidth: "240px",
     justifyContent: "center",
     width: "50px",
+    transition: "all 0.3s ease",
   },
+
   dot: {
     display: "inline-block",
     width: "8px",
@@ -66,19 +98,21 @@ const styles = {
     flexShrink: 0,
     boxShadow: "0 0 8px rgba(34,197,94,0.8)",
   },
+
   text: {
     fontFamily: "sans-serif",
     fontSize: "13px",
     fontWeight: 700,
-    color: "rgba(255,255,255,0.75)",
     letterSpacing: "0.03em",
     whiteSpace: "nowrap",
-    transition: "opacity 0.35s ease, transform 0.35s ease",
+    transition: "opacity 0.35s ease, transform 0.35s ease, color 0.3s ease",
   },
+
   enter: {
     opacity: 1,
     transform: "translateY(0px)",
   },
+
   exitAnim: {
     opacity: 0,
     transform: "translateY(-10px)",

@@ -1,12 +1,13 @@
 /* ── Mobile & Tablet: single column, stacked ── */
 .bento-grid {
+  overflow: hidden;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 0;
+  gap: 16px;
   width: 100%;
-  max-width: 1400px;
+  max-width: 1180px;
   margin: 0 auto;
-  padding: 1px 0;
+  padding: 64px clamp(18px, 5vw,32px);
   box-sizing: border-box;
 }
 
@@ -14,20 +15,29 @@
   width: 100%;
 }
 
-/* Remove section padding on cells — the grid owns spacing */
+/* the grid owns horizontal spacing */
 .bento-cell > * {
-  padding-left: 16px;
-  padding-right: 16px;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* TABLET */
+@media (min-width: 768px) {
+  .bento-grid {
+    gap: 16px;
+    padding-top: 76px;
+    padding-bottom: 76px;
+  }  
 }
 
 /* ── Desktop: bento grid ── */
 @media (min-width: 1024px) {
   .bento-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns:minmax(0,1fr) minmax(0,1fr);
     grid-template-rows: auto auto auto;
-    gap: 0;
-    padding: 24px;
+    gap: 24px;
+    padding: 88px 32px;
   }
 
   /* About: spans both columns */
@@ -58,6 +68,33 @@
 /* ── Large desktop: limit inner card widths for readability ── */
 @media (min-width: 1280px) {
   .bento-grid {
-    padding: 32px;
+    padding: 96px 32px;
+  }
+}
+
+@media (max-width: 376px) {
+  .bento-grid {
+    margin-top: 70px;
+  }
+}
+
+
+/* claude updates */
+/* ── Desktop: equal-height side-by-side cards ── */
+@media (min-width: 1024px) {
+  .bento-tech,
+  .bento-tz {
+    display: flex; /* default align-items: stretch makes the child fill the cell height */
+  }
+
+  .bento-tech > section,
+  .bento-tz > section {
+    width: 100%;
+    display: flex;
+  }
+
+  .bento-tech .tech-card,
+  .bento-tz .tz-card {
+    flex: 1; /* card now fills the full stretched height, no matter which has more content */
   }
 }

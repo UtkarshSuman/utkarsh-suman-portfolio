@@ -212,7 +212,7 @@ function Navbar({ activeSection }) {
                 </div>
                 <div className="mm-top-right">
                   <a href="/cv.pdf" download className="mm-cv-btn">
-                    Download CV
+                    Download Resume
                   </a>
                   {/* Theme toggle — mobile */}
                   <button
