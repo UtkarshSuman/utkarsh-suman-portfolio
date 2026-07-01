@@ -211,7 +211,7 @@ function Navbar({ activeSection }) {
                   Open to work
                 </div>
                 <div className="mm-top-right">
-                  <a href="/cv.pdf" download className="mm-cv-btn">
+                  <a href="pdf/Resume.pdf" download className="mm-cv-btn">
                     Download Resume
                   </a>
                   {/* Theme toggle — mobile */}

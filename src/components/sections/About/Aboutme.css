@@ -1,5 +1,38 @@
 @import url('https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@300;400;500&display=swap');
 
+/* ── Theme tokens ── */
+:root,
+[data-theme="dark"] {
+  --about-card-bg: #111827;
+  --about-card-border: rgba(255, 255, 255, 0.07);
+  --about-card-glow: rgba(139, 92, 246, 0.12);
+  --about-label-color: #7c3aed;
+  --about-headline-color: #ffffff;
+  --about-body-color: rgba(255, 255, 255, 0.55);
+  --about-fade-color: #111827;
+  --about-stat-number-color: #a78bfa;
+  --about-stat-label-color: rgba(255, 255, 255, 0.35);
+  --about-stat-divider: rgba(255, 255, 255, 0.1);
+  --about-image-filter: brightness(0.75) saturate(0.8);
+}
+[data-theme="light"] {
+  --about-card-bg: linear-gradient(135deg, #e1d4e581 0%, #e1d4e1 100%);
+  --about-card-border: rgba(139, 92, 246, 0.15);
+  --about-card-glow: rgba(139, 92, 246, 0.14);
+  --about-fade-color: #f3f0ff;
+  --about-label-color: #7c3aed;
+  --about-headline-color: #1e1b29;
+  --about-body-color: rgba(30, 27, 41, 0.6);
+  --about-stat-number-color: #7c3aed;
+  --about-stat-label-color: rgba(30, 27, 41, 0.4);
+  --about-stat-divider: rgba(139, 92, 246, 0.18);
+  --about-image-filter: brightness(0.95) saturate(0.95);
+}
+
+[data-theme="light"] .about-card {
+  box-shadow: 0 4px 24px rgba(139, 92, 246, 0.08);
+}
+
 .about-section {
   width: 100%;
   padding: 0px;
@@ -14,8 +47,8 @@
 
 /* ── Card ── */
 .about-card {
-  background: #111827;
-  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: var(--about-card-bg);
+  border: 1px solid var(--about-card-border);
   border-radius: 16px;
   padding: 28px 24px 0;
   overflow: hidden;
@@ -29,7 +62,7 @@
   right: -60px;
   width: 200px;
   height: 200px;
-  background: radial-gradient(circle, rgba(139, 92, 246, 0.12) 0%, transparent 70%);
+  background: radial-gradient(circle, var(--about-card-glow) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -39,7 +72,7 @@
   font-size: 10px;
   font-weight: 500;
   letter-spacing: 2.5px;
-  color: #7c3aed;
+  color: var(--about-label-color);
   text-transform: uppercase;
   display: block;
   margin-bottom: 14px;
@@ -50,7 +83,7 @@
   font-family: 'Syne', sans-serif;
   font-size: clamp(22px, 5.5vw, 28px);
   font-weight: 800;
-  color: #ffffff;
+  color: var(--about-headline-color);
   line-height: 1.2;
   margin: 0 0 16px;
   letter-spacing: 0px;
@@ -61,7 +94,7 @@
   font-family: 'DM Sans', sans-serif;
   font-size: 14px;
   font-weight: 300;
-  color: rgba(255, 255, 255, 0.55);
+  color: var(--about-body-color);
   line-height: 1.7;
   margin: 0 0 24px;
 }
@@ -84,7 +117,7 @@
   font-family: 'Syne', sans-serif;
   font-size: 26px;
   font-weight: 800;
-  color: #a78bfa;
+  color: var(--about-stat-number-color);
   line-height: 1;
 }
 
@@ -93,27 +126,29 @@
   font-size: 9px;
   font-weight: 500;
   letter-spacing: 2px;
-  color: rgba(255, 255, 255, 0.35);
+  color: var(--about-stat-label-color);
   text-transform: uppercase;
 }
 
 .stat-divider {
   width: 1px;
   height: 36px;
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--about-stat-divider);
 }
 
 /* ── Image ── */
 .about-image-wrapper {
   position: relative;
-  margin: 0 -24px;
+  margin: -28px -24px 0;
   height: 200px;
+  border-radius: 16px 16px 0 0;
+  overflow: hidden;
 }
 
 .about-image-glow {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, transparent 40%, #111827 100%);
+  background: linear-gradient(to bottom, transparent 40%, var(--about-fade-color) 100%);
   z-index: 1;
   pointer-events: none;
 }
@@ -124,7 +159,7 @@
   object-fit: cover;
   object-position: center top;
   display: block;
-  filter: brightness(0.75) saturate(0.8);
+  filter: var(--about-image-filter);
 }
 
 /* ================= DESKTOP ================= */
@@ -187,7 +222,7 @@
   .about-image-wrapper {
     grid-column: 2;
     grid-row: 1 / 5;
-    margin: 0 -40px 0 0;
+    margin: -40px -40px 0 0;
     height: auto;
     align-self: stretch;
     border-radius: 0 24px 24px 0;
@@ -195,7 +230,7 @@
   }
 
   .about-image-glow {
-    background: linear-gradient(to right, #111827 0%, transparent 30%, transparent 100%);
+    background: linear-gradient(to right, var(--about-fade-color) 0%, transparent 30%, transparent 100%);
   }
 
   .about-image {

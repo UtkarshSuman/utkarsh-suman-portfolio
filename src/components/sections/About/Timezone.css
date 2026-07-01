@@ -1,5 +1,40 @@
 @import url('https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@300;400&family=DM+Mono:wght@400;500&display=swap');
 
+/* ── Theme tokens ── */
+:root,
+[data-theme="dark"] {
+  --tz-card-bg: #0f0f1a;
+  --tz-card-border: rgba(255, 255, 255, 0.07);
+  --tz-ring-1: rgba(139, 92, 246, 0.15);
+  --tz-ring-2: rgba(99, 102, 241, 0.08);
+  --tz-ring-3: rgba(139, 92, 246, 0.05);
+  --tz-offset-color: #ffffff;
+  --tz-badge-color: #7c3aed;
+  --tz-live-time-color: rgba(139, 92, 246, 0.7);
+  --tz-live-time-bg: rgba(139, 92, 246, 0.08);
+  --tz-live-time-border: rgba(139, 92, 246, 0.15);
+  --tz-title-color: #ffffff;
+  --tz-desc-color: rgba(255, 255, 255, 0.45);
+}
+[data-theme="light"] {
+  --tz-card-bg: linear-gradient(135deg, #61579fcf 0%, #c5c0d886 100%);
+  --tz-card-border: rgba(139, 92, 246, 0.15);
+  --tz-ring-1: rgba(138, 92, 246, 0.263);
+  --tz-ring-2: rgba(99, 101, 241, 0.217);
+  --tz-ring-3: rgba(138, 92, 246, 0.162);
+  --tz-offset-color: #1e1b29;
+  --tz-badge-color: #7c3aed;
+  --tz-live-time-color: #6d28d9;
+  --tz-live-time-bg: rgba(139, 92, 246, 0.1);
+  --tz-live-time-border: rgba(139, 92, 246, 0.22);
+  --tz-title-color: #1e1b29;
+  --tz-desc-color: rgba(30, 27, 41, 0.5);
+}
+
+[data-theme="light"] .tz-card {
+  box-shadow: 0 4px 24px rgba(139, 92, 246, 0.08);
+}
+
 .tz-section {
   width: 100%;
   height: auto;
@@ -14,8 +49,8 @@
 
 /* ── Card ── */
 .tz-card {
-  background: #0f0f1a;
-  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: var(--tz-card-bg);
+  border: 1px solid var(--tz-card-border);
   border-radius: 20px;
   padding: 40px 24px;
 
@@ -49,7 +84,7 @@
   width: 180px;
   height: 180px;
   animation-duration: 12s;
-  border-color: rgba(139, 92, 246, 0.15);
+  border-color: var(--tz-ring-1);
 }
 
 .ring-2 {
@@ -57,14 +92,14 @@
   height: 280px;
   animation-duration: 20s;
   animation-direction: reverse;
-  border-color: rgba(99, 102, 241, 0.08);
+  border-color: var(--tz-ring-2);
 }
 
 .ring-3 {
   width: 380px;
   height: 380px;
   animation-duration: 30s;
-  border-color: rgba(139, 92, 246, 0.05);
+  border-color: var(--tz-ring-3);
 }
 
 @keyframes orbit-spin {
@@ -82,7 +117,7 @@
   font-family: 'Syne', sans-serif;
   font-size: 32px;
   font-weight: 800;
-  color: #ffffff;
+  color: var(--tz-offset-color);
   letter-spacing: -1px;
   line-height: 1;
   margin-bottom: 6px;
@@ -93,7 +128,7 @@
   font-size: 9px;
   font-weight: 500;
   letter-spacing: 3px;
-  color: #7c3aed;
+  color: var(--tz-badge-color);
   text-transform: uppercase;
   margin-bottom: 14px;
   display: block;
@@ -102,21 +137,21 @@
 .tz-live-time {
   font-family: 'DM Mono', monospace;
   font-size: 13px;
-  color: rgba(139, 92, 246, 0.7);
+  color: var(--tz-live-time-color);
   letter-spacing: 1px;
   margin-bottom: 20px;
-  background: rgba(139, 92, 246, 0.08);
+  background: var(--tz-live-time-bg);
   display: inline-block;
   padding: 4px 12px;
   border-radius: 6px;
-  border: 1px solid rgba(139, 92, 246, 0.15);
+  border: 1px solid var(--tz-live-time-border);
 }
 
 .tz-title {
   font-family: 'Syne', sans-serif;
   font-size: 17px;
   font-weight: 700;
-  color: #ffffff;
+  color: var(--tz-title-color);
   margin: 0 0 8px;
 }
 
@@ -124,7 +159,7 @@
   font-family: 'DM Sans', sans-serif;
   font-size: 13px;
   font-weight: 300;
-  color: rgba(255, 255, 255, 0.45);
+  color: var(--tz-desc-color);
   line-height: 1.6;
   margin: 0;
   max-width: 220px;

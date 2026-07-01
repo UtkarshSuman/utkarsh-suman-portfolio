@@ -21,21 +21,25 @@
 }
 
 [data-theme="light"] {
-  --tech-card-bg: #43bacd4e;
-  --tech-card-border: rgba(0, 0, 0, 0.08);
-  --tech-card-glow: rgba(99, 102, 241, 0.12);
-  --tech-icon-bg: rgba(99, 102, 241, 0.1);
-  --tech-icon-border: rgba(99, 102, 241, 0.22);
+  --tech-card-bg: linear-gradient(135deg, #79c5c7 0%, #b8c1dea0 100%);
+  --tech-card-border: rgba(99, 102, 241, 0.15);
+  --tech-card-glow: rgba(99, 102, 241, 0.15);
+  --tech-icon-bg: rgba(99, 102, 241, 0.12);
+  --tech-icon-border: rgba(99, 102, 241, 0.25);
   --tech-icon-color: #4f46e5;
-  --tech-title-color: #1a1a2e;
-  --tech-pill-color: rgba(26, 26, 46, 0.7);
-  --tech-pill-bg: rgba(0, 0, 0, 0.04);
-  --tech-pill-border: rgba(0, 0, 0, 0.08);
-  --tech-pill-hover-bg: rgba(99, 102, 241, 0.12);
-  --tech-pill-hover-border: rgba(99, 102, 241, 0.35);
+  --tech-title-color: #1e1b29;
+  --tech-pill-color: rgba(30, 27, 41, 0.7);
+  --tech-pill-bg: rgba(255, 255, 255, 0.6);
+  --tech-pill-border: rgba(99, 102, 241, 0.18);
+  --tech-pill-hover-bg: rgba(99, 102, 241, 0.14);
+  --tech-pill-hover-border: rgba(99, 102, 241, 0.4);
   --tech-pill-hover-color: #4338ca;
-  --tech-note-color: rgba(26, 26, 46, 0.5);
-  --tech-note-border: rgba(0, 0, 0, 0.08);
+  --tech-note-color: rgba(30, 27, 41, 0.5);
+  --tech-note-border: rgba(99, 102, 241, 0.15);
+}
+
+[data-theme="light"] .tech-card {
+  box-shadow: 0 4px 24px rgba(99, 102, 241, 0.08);
 }
 
 .tech-section {
