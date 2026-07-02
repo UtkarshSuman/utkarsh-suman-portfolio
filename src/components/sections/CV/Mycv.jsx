@@ -1,16 +1,13 @@
 import { useState } from "react";
 import "./Mycv.css";
 
-/* ── Config — edit these to match your details ────────────
-   Replace CV_FILE_PATH with the actual path to your CV PDF,
-   e.g. "/assets/John_Doe_CV.pdf" or a public URL.
-────────────────────────────────────────────────────────── */
+
 const CONFIG = {
   name: "Utkarsh",
   nameBold: "Suman",
   role: "Full-Stack Developer  ·  Backend Devlopment  ·  Open to opportunities",
-  cvFilePath: "/assets/your-cv.pdf",      // ← change this
-  cvFileName: "YourName_CV_2025.pdf",     // ← downloaded file name
+  cvFilePath: "/assets/your-cv.pdf",      
+  cvFileName: "Name_CV_2025.pdf",    
   stats: [
     { value: "1+", label: "Years exp." },
     { value: "8+", label: "Projects" },

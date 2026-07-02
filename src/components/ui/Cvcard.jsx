@@ -1,14 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import "./CVCard.css";
 
-/**
- * CVCard
- * Props:
- *   cvUrl      — path/URL to your PDF  e.g. "/Tushar_CV.pdf"
- *   name       — your name shown on the card
- *   role       — your role/title
- *   lastUpdated — e.g. "Jan 2025"
- */
 export default function CVCard({
   cvUrl      = "/Utkarsh_CV.pdf",
   name       = "Utkarsh Suman",

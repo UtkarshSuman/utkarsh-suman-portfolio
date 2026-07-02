@@ -1,6 +1,4 @@
-// data.js — Work Experience Data
-// To use real logos: replace `logo: null` with `logo: "/logos/company.png"` or an external URL
-// The `initials` and `color` fields are used as fallback when no logo is provided
+
 
 export const experiences = [
   {

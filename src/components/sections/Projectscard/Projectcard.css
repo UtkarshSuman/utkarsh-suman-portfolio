@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Fira+Code:wght@400;500&display=swap');
 
-/* ── Theme Variables ─────────────────────────────────────────── */
+
 :root,
 [data-theme="dark"] {
   --bg-page:        #080a0c;
@@ -120,7 +120,7 @@
   --pc-card-tilt-shadow-color: rgba(15,23,42,.18);
 }
 
-/* ── Shared (non-color) constants ───────────────────────────── */
+
 :root {
   --radius-card:    16px;
   --radius-btn:     8px;
@@ -129,7 +129,8 @@
   --transition:     0.32s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* ── Page ────────────────────────────────────────────────────── */
+/* Page  */
+
 .pc-page {
   min-height: 100vh;
   background: transparent;
@@ -143,14 +144,14 @@
 }
 
 
-/* ── Header ──────────────────────────────────────────────────── */
+/* Header  */
 .pc-header { text-align: center; margin-bottom: 56px; position: relative; z-index: 1; }
 .pc-header__eyebrow { font-family: var(--font-mono); font-size: 11px; letter-spacing: .22em; text-transform: uppercase; color: var(--accent); margin: 0 0 14px; }
 .pc-header__title { font-family: var(--font-display); font-size: clamp(32px,6vw,52px); font-weight: 800; color: var(--text-primary); letter-spacing: -.04em; line-height: 1.08; margin: 0 0 16px; }
 .pc-header__title span { color: var(--accent); }
 .pc-header__sub { font-family: var(--font-mono); font-size: 13px; color: var(--text-secondary); margin: 0; }
 
-/* ── Grid ────────────────────────────────────────────────────── */
+/* Grid  */
 .pc-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 340px));
@@ -162,10 +163,10 @@
   z-index: 1;
 }
 
-/* ── Card wrap — holds perspective ──────────────────────────── */
+/* Card wrap, holds perspective */
 .pc-card-wrap { perspective: 1000px; }
 
-/* ── Card ────────────────────────────────────────────────────── */
+/* Card */
 .pc-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
@@ -197,7 +198,7 @@
 }
 .pc-card.tilted::before { opacity: 1; }
 
-/* ── Glare layer ─────────────────────────────────────────────── */
+/* Glare layer  */
 .pc-glare {
   position: absolute;
   inset: 0;
@@ -208,7 +209,7 @@
   transition: opacity .2s;
 }
 
-/* ── Image wrap — outer allows overflow, inner clips corners ─── */
+/*  Image wrap - outer allows overflow, inner clips corners */
 .pc-card__img-wrap {
   position: relative;
   height: 196px;
@@ -250,7 +251,7 @@
 }
 .pc-card.tilted .pc-card__img-overlay { opacity: .7; }
 
-/* ── Pop-out text labels (fade in on hover) ──────────────────── */
+/*  Pop-out text labels (fade in on hover)  */
 .pc-img-poptext {
   position: absolute;
   bottom: 10px; left: 12px; right: 12px;
@@ -289,7 +290,7 @@
   border: 1px solid var(--pc-poptext-arrow-border);
 }
 
-/* ── Live badge ──────────────────────────────────────────────── */
+/* Live badge  */
 .pc-badge {
   position: absolute;
   top: 12px; right: 12px;
@@ -315,7 +316,7 @@
   50%       { opacity: .5; transform: scale(.85); }
 }
 
-/* ── Card body ───────────────────────────────────────────────── */
+/*  Card body  */
 .pc-card__body {
   padding: 20px 22px;
   display: flex;
@@ -353,10 +354,10 @@
 .pc-divider { height: 1px; background: var(--border); margin: 4px 0; transition: background .3s; }
 .pc-card.tilted .pc-divider { background: var(--border-hover); }
 
-/* ── Footer ──────────────────────────────────────────────────── */
+/* Footer  */
 .pc-card__footer { display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
 
-/* ── Tech stack circles ──────────────────────────────────────── */
+/*  Tech stack circles  */
 .pc-stack { display: flex; align-items: center; }
 .pc-stack__icon {
   width: 30px; height: 30px; border-radius: 50%;
@@ -399,7 +400,7 @@
   transition: background 0.3s ease, border-color 0.3s ease;
 }
 
-/* ── Button row ──────────────────────────────────────────────── */
+/* Button row  */
 .pc-btn-row { display: flex; align-items: center; gap: 6px; }
 
 .pc-link {

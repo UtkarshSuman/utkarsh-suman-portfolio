@@ -22,16 +22,5 @@ export const experiences = [
     description:
       "Represented EDC IIT Delhi and promoted entrepreneurship initiatives among students.Organized outreach activities to increase participation in innovation and startup events.Collaborated with the EDC team to spread awareness about entrepreneurial opportunities.",
   },
-  // {
-  //   id: 3,
-  //   startDate: "Jan 2024",
-  //   endDate: "Apr 2025",
-  //   title: "Freelance Software Developer",
-  //   company: "Self-Employed",
-  //   logo: null,
-  //   logoFallback: "F",
-  //   description:
-  //     "Working on client projects, developing websites and bots that enhanced user experience and functionality by designing intuitive, user-friendly interfaces.",
-  // },
 ];
 export default experiences;

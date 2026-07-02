@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap');
 
-/* ─────────────────────────────────────
-   LAYOUT
-───────────────────────────────────── */
+
+   /* LAYOUT */
+
 .hero-actions {
   display: flex;
   align-items: center;
@@ -10,9 +10,8 @@
   flex-wrap: wrap;
 }
 
-/* ─────────────────────────────────────
-   BASE BUTTON (UPGRADED)
-───────────────────────────────────── */
+/* BASE BUTTON  */
+
 .btn {
   display: inline-flex;
   align-items: center;
@@ -60,9 +59,8 @@
   pointer-events: none;
 }
 
-/* ─────────────────────────────────────
-   VIEW PROJECTS (NEON OUTLINE)
-───────────────────────────────────── */
+  /* VIEW PROJECTS (NEON OUTLINE) */
+
 .btn-outline {
   background: rgba(99, 102, 241, 0.06);
   color: #c7d2fe;
@@ -104,9 +102,8 @@
   opacity: 1;
 }
 
-/* ─────────────────────────────────────
-   VIEW RESUME (PRIMARY CTA)
-───────────────────────────────────── */
+ /* VIEW RESUME (PRIMARY CTA) */
+
 .btn-solid {
   background: linear-gradient(135deg, #4f46e5, #6366f1);
   color: #ffffff;
@@ -146,9 +143,8 @@
   filter: brightness(1.05);
 }
 
-/* ─────────────────────────────────────
-   ROLE BADGE (UPGRADED)
-───────────────────────────────────── */
+   /* ROLE BADGE  */
+
 .role-badge-wrapper {
   display: flex;
   align-items: center;
@@ -195,9 +191,8 @@
   100% { transform: translateX(30%) rotate(360deg); }
 }
 
-/* ─────────────────────────────────────
-   ROLE INDICATOR (ALIVE DOT)
-───────────────────────────────────── */
+  /* ROLE INDICATOR  */
+
 .role-indicator {
   width: 8px;
   height: 8px;
@@ -226,9 +221,8 @@
   100% { opacity: 0; }
 }
 
-/* ─────────────────────────────────────
-   ROLE TEXT
-───────────────────────────────────── */
+/* ROLE TEXT */
+
 .role-text-container {
   position: relative;
   height: 20px;
@@ -266,9 +260,8 @@
   to   { opacity: 0; transform: translateY(-10px); }
 }
 
-/* ─────────────────────────────────────
-   RESPONSIVE (UNCHANGED SIZES)
-───────────────────────────────────── */
+
+
 @media (min-width: 640px) {
   .btn {
     font-size: 14px;

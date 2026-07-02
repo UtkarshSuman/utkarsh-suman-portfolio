@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap');
 
-/* ══════════════════════════════════
-   CARD ROOT
-══════════════════════════════════ */
+
 .cvc-root {
   position: relative;
   background: #111827;           /* matches Tech Stack / UTC cards */
@@ -49,9 +47,8 @@
   opacity: 1.4;
 }
 
-/* ══════════════════════════════════
-   HEADER ROW
-══════════════════════════════════ */
+  /* HEADER ROW */
+
 .cvc-header {
   display: flex;
   align-items: center;
@@ -119,9 +116,8 @@
   100% { opacity: 0; }
 }
 
-/* ══════════════════════════════════
-   IDENTITY
-══════════════════════════════════ */
+  /* IDENTITY */
+
 .cvc-identity {
   margin-bottom: 20px;
 }
@@ -144,9 +140,8 @@
   letter-spacing: 0.3px;
 }
 
-/* ══════════════════════════════════
-   STATS ROW
-══════════════════════════════════ */
+   /* STATS ROW */
+
 .cvc-stats {
   display: flex;
   align-items: center;
@@ -190,18 +185,17 @@
   flex-shrink: 0;
 }
 
-/* ══════════════════════════════════
-   DIVIDER
-══════════════════════════════════ */
+
+   /* DIVIDER */
+
 .cvc-divider {
   height: 1px;
   background: linear-gradient(90deg, transparent, rgba(139,92,246,0.3), rgba(0,224,255,0.15), transparent);
   margin-bottom: 20px;
 }
 
-/* ══════════════════════════════════
-   ACTION BUTTONS
-══════════════════════════════════ */
+  /* ACTION BUTTONS */
+
 .cvc-actions {
   display: flex;
   gap: 10px;

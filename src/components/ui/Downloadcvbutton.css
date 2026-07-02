@@ -1,8 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Syne:wght@600;700&family=DM+Sans:wght@300;400;500&display=swap');
 
-/* ═══════════════════════════
-   ROOT
-═══════════════════════════ */
 .cvb-root {
   position: relative;
   display: inline-flex;
@@ -11,9 +8,9 @@
   
 }
 
-/* ═══════════════════════════
-   TRIGGER BUTTON
-═══════════════════════════ */
+
+   /* TRIGGER BUTTON */
+
 .cvb-trigger {
   position: relative;
   display: inline-flex;
@@ -169,9 +166,8 @@
 .cvb-chevron-up { transform: rotate(-180deg); color: #a78bfa; }
 .cvb-trigger:hover .cvb-chevron { color: rgba(255,255,255,0.7); }
 
-/* ═══════════════════════════
-   DROPDOWN MENU
-═══════════════════════════ */
+   /* DROPDOWN MENU */
+
 .cvb-menu {
   position: absolute;
   top: calc(100% + 10px);

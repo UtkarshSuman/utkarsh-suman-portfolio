@@ -1,8 +1,4 @@
-/* ════════════════════════════════════════
-   HERO THEME VARIABLES
-   (merge into your existing :root / [data-theme] blocks
-    in navbar.css, or keep here — just keep one source of truth)
-   ════════════════════════════════════════ */
+
 :root,
 [data-theme="dark"] {
   --hero-bg: linear-gradient(180deg, #09090b 0%, #0f1117 52%, #08090d 100%);
@@ -104,9 +100,8 @@
   --hero-social-link-hover: #0f172a;
 }
 
-/* ════════════════════════════════════════
-   HERO SECTION
-   ════════════════════════════════════════ */
+/* HERO SECTION */
+
 .hero {
   padding: 0 48px 0;
   min-height: auto;

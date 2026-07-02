@@ -1,7 +1,7 @@
 import "./Techstackcard.css";
 import { techStack } from "../../../data/portfolioData";
 
-/* ── Single tech row with animated progress bar ─────────── */
+/*  Single tech row with animated progress bar  */
 function TechRow({ name, level, icon, color, rowIndex }) {
   return (
     <div className="tsc-tech">
@@ -23,7 +23,7 @@ function TechRow({ name, level, icon, color, rowIndex }) {
   );
 }
 
-/* ── Category block ─────────────────────────────────────── */
+/* Category block  */
 function CategoryBlock({ category, icon, color, techs }) {
   return (
     <div className="tsc-category" style={{ "--cat-color": color }}>
@@ -47,7 +47,7 @@ function CategoryBlock({ category, icon, color, techs }) {
   );
 }
 
-/* ── Main Card ──────────────────────────────────────────── */
+/* Main Card */
 export default function TechStackCard() {
   const totalTechs = techStack.reduce((sum, cat) => sum + cat.techs.length, 0);
 

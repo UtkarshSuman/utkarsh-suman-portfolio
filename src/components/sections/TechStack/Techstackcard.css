@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Outfit:wght@300;400;500;600;700&display=swap');
 
-/* ─── Root ──────────────────────────────────────────────── */
+
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
@@ -18,7 +18,8 @@
   --ease:       cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-/* ─── Page Wrapper ──────────────────────────────────────── */
+/* Page Wrapper  */
+
 .tsc-page {
   min-height: 100vh;
   background: var(--bg);
@@ -41,7 +42,8 @@
   opacity: 0.4;
 }
 
-/* ─── Main Card ─────────────────────────────────────────── */
+/* Main Card  */
+
 .tsc-card {
   position: relative;
   z-index: 1;
@@ -88,7 +90,8 @@
   to   { opacity: 1; transform: translateY(0) scale(1); }
 }
 
-/* ─── Header ────────────────────────────────────────────── */
+/* Header  */
+
 .tsc-header {
   display: flex;
   align-items: flex-start;
@@ -159,7 +162,8 @@
   50%       { opacity: 0.5; box-shadow: 0 0 2px #34d399; }
 }
 
-/* ─── Category Grid ─────────────────────────────────────── */
+ /* Category Grid  */
+
 .tsc-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -173,7 +177,8 @@
   .tsc-card { padding: 24px; }
 }
 
-/* ─── Category Block ────────────────────────────────────── */
+/* Category Block  */
+
 .tsc-category {
   background: var(--surface-2);
   border: 1px solid var(--border);
@@ -215,7 +220,8 @@
 .tsc-category:nth-child(3) { animation-delay: 0.26s; }
 .tsc-category:nth-child(4) { animation-delay: 0.34s; }
 
-/* ─── Category Header ───────────────────────────────────── */
+ /* Category Header  */
+
 .tsc-cat-header {
   display: flex;
   align-items: center;
@@ -246,7 +252,8 @@
   color: var(--text-3);
 }
 
-/* ─── Tech Row ──────────────────────────────────────────── */
+ /* Tech Row  */
+
 .tsc-tech-list { display: flex; flex-direction: column; gap: 10px; }
 
 .tsc-tech {
@@ -281,7 +288,8 @@
   color: var(--text-3);
 }
 
-/* ─── Progress Bar ──────────────────────────────────────── */
+/* Progress Bar  */
+
 .tsc-bar-track {
   height: 3px;
   background: var(--surface-3);
@@ -304,7 +312,8 @@
   to   { transform: scaleX(1); }
 }
 
-/* ─── Footer ────────────────────────────────────────────── */
+ /* Footer  */
+ 
 .tsc-footer {
   margin-top: 24px;
   padding-top: 18px;

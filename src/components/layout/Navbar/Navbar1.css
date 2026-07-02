@@ -509,9 +509,8 @@ body { margin: 0; padding: 0; }
 }
 .book-call-btn:hover { opacity: 0.88; transform: translateY(-1px); }
 
-/* =====================================================
-   RESPONSIVE
-   ===================================================== */
+
+/* RESPONSIVE */
 
 /* ── Tablet: tighten spacing, keep everything visible ── */
 @media (max-width: 1024px) {
