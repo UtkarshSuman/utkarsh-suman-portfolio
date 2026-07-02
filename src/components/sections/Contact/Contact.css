@@ -189,7 +189,7 @@
   isolation: isolate;
   font-family: var(--font-body);
   color: var(--text-primary);
-  background: var(--bg);
+  background: transparent;
   transition: background 0.3s var(--ease-out);
 }
 

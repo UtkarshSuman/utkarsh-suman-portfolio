@@ -32,7 +32,7 @@
 }
 
 .footer {
-  background: var(--footer-bg);
+  background: transparent;
   color: var(--footer-text-secondary);
   width: 100%;
   border-top: 1px solid var(--footer-border);
