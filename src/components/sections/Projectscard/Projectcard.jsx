@@ -132,9 +132,7 @@ function ProjectCard({ project }) {
 export default function ProjectCards() {
   return (
     <main id="projects" className="pc-page">
-      <div className="pc-bg-dots" />
-      <div className="pc-blob pc-blob-l" />
-      <div className="pc-blob pc-blob-r" />
+      
       <header className="pc-header">
         <p className="pc-header__eyebrow">// portfolio</p>
         <h2 className="pc-header__title">Things I've&nbsp;<span>built</span></h2>

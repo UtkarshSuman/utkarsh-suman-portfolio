@@ -132,7 +132,7 @@
 /* ── Page ────────────────────────────────────────────────────── */
 .pc-page {
   min-height: 100vh;
-  background: var(--bg-page);
+  background: transparent;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -142,22 +142,6 @@
   transition: background 0.3s ease;
 }
 
-.pc-bg-dots {
-  position: absolute;
-  inset: 0;
-  background-image: radial-gradient(var(--pc-dots) 1px, transparent 1px);
-  background-size: 28px 28px;
-  pointer-events: none;
-}
-
-.pc-blob {
-  position: absolute;
-  border-radius: 50%;
-  pointer-events: none;
-  filter: blur(130px);
-}
-.pc-blob-l { width: 520px; height: 520px; top: -140px; left: -160px; background: var(--pc-blob-l); }
-.pc-blob-r { width: 420px; height: 420px; bottom: -120px; right: -120px; background: var(--pc-blob-r); }
 
 /* ── Header ──────────────────────────────────────────────────── */
 .pc-header { text-align: center; margin-bottom: 56px; position: relative; z-index: 1; }

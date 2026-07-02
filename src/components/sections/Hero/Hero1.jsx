@@ -8,11 +8,6 @@ export default function Hero() {
   return (
     <section id="hero" className="hero">
 
-      {/* Background */}
-      <div className="pc-bg-dots" />
-      <div className="pc-blob pc-blob-l" />
-      <div className="pc-blob pc-blob-r" />
-
       <div className="hero__body">
         <div className="hero__left">
           <RotatingBadge id="rotatingBadge"/>
